@@ -1,0 +1,122 @@
+import { useState } from "react";
+import { Send } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
+
+export function Contact() {
+  const { t } = useLanguage();
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+    setFormData({ name: "", email: "", message: "" });
+    setTimeout(() => setSubmitted(false), 4000);
+  };
+
+  return (
+    <section id="samband" className="py-28 bg-[#1e293b]">
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+          <div className="text-white">
+            <p
+              className="text-accent mb-4"
+              style={{ fontSize: "0.875rem", fontWeight: 500, letterSpacing: "0.05em" }}
+            >
+              {t.contact.tagline}
+            </p>
+            <h2
+              className="mb-8"
+              style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.2 }}
+            >
+              {t.contact.title}
+            </h2>
+            <p className="text-white/45 mb-12 max-w-sm" style={{ fontSize: "1rem", lineHeight: 1.75 }}>
+              {t.contact.description}
+            </p>
+
+            <div className="space-y-5" style={{ fontSize: "0.9375rem" }}>
+              <div>
+                <p className="text-white/30 mb-1" style={{ fontSize: "0.75rem" }}>{t.contact.emailLabel}</p>
+                <p>{t.contact.email}</p>
+              </div>
+              <div>
+                <p className="text-white/30 mb-1" style={{ fontSize: "0.75rem" }}>{t.contact.phoneLabel}</p>
+                <p>{t.contact.phone}</p>
+              </div>
+              <div>
+                <p className="text-white/30 mb-1" style={{ fontSize: "0.75rem" }}>{t.contact.locationLabel}</p>
+                <p>{t.contact.location}</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            {submitted ? (
+              <div className="h-full flex items-center justify-center text-center py-16">
+                <div>
+                  <h3 className="text-white mb-2" style={{ fontSize: "1.25rem", fontWeight: 600 }}>
+                    {t.contact.thankYouTitle}
+                  </h3>
+                  <p className="text-white/40" style={{ fontSize: "0.875rem" }}>
+                    {t.contact.thankYouMessage}
+                  </p>
+                </div>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label className="text-white/50 mb-2 block" style={{ fontSize: "0.8125rem", fontWeight: 400 }}>
+                    {t.contact.formName}
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="w-full bg-transparent border-b border-white/15 text-white pb-3 focus:outline-none focus:border-accent transition-colors placeholder:text-white/20"
+                    placeholder={t.contact.formNamePlaceholder}
+                  />
+                </div>
+                <div>
+                  <label className="text-white/50 mb-2 block" style={{ fontSize: "0.8125rem", fontWeight: 400 }}>
+                    {t.contact.formEmail}
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full bg-transparent border-b border-white/15 text-white pb-3 focus:outline-none focus:border-accent transition-colors placeholder:text-white/20"
+                    placeholder={t.contact.formEmailPlaceholder}
+                  />
+                </div>
+                <div>
+                  <label className="text-white/50 mb-2 block" style={{ fontSize: "0.8125rem", fontWeight: 400 }}>
+                    {t.contact.formMessage}
+                  </label>
+                  <textarea
+                    required
+                    rows={4}
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className="w-full bg-transparent border-b border-white/15 text-white pb-3 focus:outline-none focus:border-accent transition-colors placeholder:text-white/20 resize-none"
+                    placeholder={t.contact.formMessagePlaceholder}
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="bg-accent text-white px-8 py-3.5 rounded-lg hover:bg-accent/90 transition-colors flex items-center gap-2.5 cursor-pointer mt-4"
+                  style={{ fontSize: "0.9375rem", fontWeight: 500 }}
+                >
+                  {t.contact.formSubmit}
+                  <Send size={15} />
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
