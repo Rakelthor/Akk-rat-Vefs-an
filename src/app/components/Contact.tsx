@@ -6,12 +6,33 @@ export function Contact() {
   const { t } = useLanguage();
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setFormData({ name: "", email: "", message: "" });
-    setTimeout(() => setSubmitted(false), 4000);
+    setIsSubmitting(true);
+
+    const form = e.target as HTMLFormElement;
+    const formDataObj = new FormData(form);
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formDataObj as any).toString(),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setSubmitted(false), 5000);
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("Villa kom upp. Vinsamlegast reyndu aftur eða hafðu beint samband í tölvupósti.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -64,13 +85,31 @@ export function Contact() {
                 </div>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form 
+                onSubmit={handleSubmit} 
+                className="space-y-6"
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+              >
+                {/* Netlify form name - hidden */}
+                <input type="hidden" name="form-name" value="contact" />
+                
+                {/* Honeypot for spam protection - hidden */}
+                <p className="hidden">
+                  <label>
+                    Don't fill this out if you're human: <input name="bot-field" />
+                  </label>
+                </p>
+
                 <div>
                   <label className="text-white/50 mb-2 block" style={{ fontSize: "0.8125rem", fontWeight: 400 }}>
                     {t.contact.formName}
                   </label>
                   <input
                     type="text"
+                    name="name"
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -84,6 +123,7 @@ export function Contact() {
                   </label>
                   <input
                     type="email"
+                    name="email"
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -96,6 +136,7 @@ export function Contact() {
                     {t.contact.formMessage}
                   </label>
                   <textarea
+                    name="message"
                     required
                     rows={4}
                     value={formData.message}
@@ -106,10 +147,11 @@ export function Contact() {
                 </div>
                 <button
                   type="submit"
-                  className="bg-accent text-white px-8 py-3.5 rounded-lg hover:bg-accent/90 transition-colors flex items-center gap-2.5 cursor-pointer mt-4"
+                  disabled={isSubmitting}
+                  className="bg-accent text-white px-8 py-3.5 rounded-lg hover:bg-accent/90 transition-colors flex items-center gap-2.5 cursor-pointer mt-4 disabled:opacity-50 disabled:cursor-not-allowed"
                   style={{ fontSize: "0.9375rem", fontWeight: 500 }}
                 >
-                  {t.contact.formSubmit}
+                  {isSubmitting ? "Sending..." : t.contact.formSubmit}
                   <Send size={15} />
                 </button>
               </form>
