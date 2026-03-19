@@ -1,7 +1,7 @@
-import { BookOpen, FileText, Wallet, BarChart3, Lightbulb, Globe } from "lucide-react";
+import { BookOpen, Cpu, Wallet, FileText, FileCheck, Receipt, Scale, Lightbulb, Building2 } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
-const icons = [BookOpen, FileText, Wallet, BarChart3, Lightbulb, Globe];
+const icons = [BookOpen, Cpu, Wallet, FileText, FileCheck, Receipt, Scale, Lightbulb, Building2];
 
 export function Services() {
   const { t } = useLanguage();
@@ -26,15 +26,15 @@ export function Services() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {t.services.items.map((s, index) => {
-            const Icon = icons[index];
+            const Icon = icons[index % icons.length];
             return (
               <div
-                key={s.title}
+                key={`${s.title}-${index}`}
                 className="bg-white border border-black/8 rounded-2xl p-8 text-center hover:shadow-md hover:border-accent/30 transition-all duration-300"
               >
                 <div className="flex justify-center mb-5">
                   <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center">
-                    <Icon className="text-accent" size={28} strokeWidth={1.5} />
+                    {Icon && <Icon className="text-accent" size={28} strokeWidth={1.5} />}
                   </div>
                 </div>
                 <h3

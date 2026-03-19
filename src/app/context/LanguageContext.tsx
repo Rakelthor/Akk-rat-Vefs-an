@@ -12,8 +12,7 @@ const translations = {
   is: {
     // Navbar
     nav: {
-      accounting: "Bókhald",
-      payroll: "Launavinnsla",
+      services: "Þjónusta",
       pricing: "Verð",
       about: "Um okkur",
       contact: "Samband",
@@ -28,6 +27,23 @@ const translations = {
       ctaPrimary: "Bóka kynningarsamtal",
       ctaSecondary: "Sjá þjónustu",
     },
+    // Services Intro
+    servicesIntro: {
+      items: [
+        {
+          title: "Bókhald",
+          description: "Við færum bókhald og setjum fram upplýsingar um reksturinn mjög á skýran og greinargóðan hátt. Við minnum þig tímanlega á öll skil til yfirvalda og sinnum samskiptum við hið opinbera ef þörf krefur.",
+        },
+        {
+          title: "Laun",
+          description: "Við reiknum fyrir launin og sjáum um að útbúa allar skilagreinar til banka, lífeyrissjóða og stéttarfélaga. Við veitum einnig ráðgjöf um ákvæði stéttarfélaga um laun.",
+        },
+        {
+          title: "Ársreikningar",
+          description: "Við aðstoðum þig tímanlega við uppgjörið og ársreikninginn. Við bjóðum einnig upp á milliuppgjör ef þess er óskað.",
+        },
+      ],
+    },
     // Services
     services: {
       tagline: "ÞJÓNUSTA",
@@ -35,7 +51,7 @@ const translations = {
       items: [
         {
           title: "Bókhald",
-          desc: "Við veitum almenna bókhaldsþjónustu og sjáum um skil á staðgreiðslu og virðisaukaskatti.",
+          desc: "Við færum bókhald og setjum fram upplýsingar um reksturinn mjög á skýran og greinargóðan hátt. Við minnum þig tímanlega á öll skil til yfirvalda og sinnum samskiptum við hið opinbera ef þörf krefur.",
         },
         {
           title: "Rafrænar lausnir",
@@ -43,19 +59,31 @@ const translations = {
         },
         {
           title: "Laun",
-          desc: "Við bjóðum upp á launaútreikninga og launabókhald fyrir minni fyrirtæki. Við veitum einnig ráðgjöf um ákvæði stéttarfélaga um laun.",
+          desc: "Við reiknum fyrir launin og sjáum um að útbúa allar skilagreinar til banka, lífeyrissjóða og stéttarfélaga. Við veitum einnig ráðgjöf um ákvæði stéttarfélaga um laun.",
         },
         {
           title: "Ársreikningar",
-          desc: "Við tökum saman ársreikninga og sjáum um skattframtöl fyrir fyrirtæki og einstaklinga.",
+          desc: "Við aðstoðum þig tímanlega við uppgjörið og ársreikninginn. Við bjóðum einnig upp á milliuppgjör ef þess er óskað.",
+        },
+        {
+          title: "Framtalsgerð",
+          desc: "Við aðstoðum við framtalsgerð fyrir fyrirtæki, félagasamtök og einstaklinga.",
+        },
+        {
+          title: "Rafrænir reikningar",
+          desc: "Við aðstoðum við útgáfu reikninga og innheimtu þeirra ef þess er óskað.",
+        },
+        {
+          title: "Samskipti við yfirvöld",
+          desc: "Við önnumst samskipti við skattayfirvöld þegar þörf krefur.",
         },
         {
           title: "Ráðgjöf",
           desc: "Persónuleg ráðgjöf og stuðningur við ákvarðanatöku fyrir eigendur og stjórnendur.",
         },
         {
-          title: "Þjónustuvefur",
-          desc: "Á þjónustuvefnum er alltaf hægt að nálgast allar helstu fjárhagsupplýsingar sem hafa verið bókaðar.",
+          title: "Stofnun fyrirtækja",
+          desc: "Við aðstoðum þig við val á félagaformi og fylgjum þér í gegnum ferlið við að stofna fyrirtæki.",
         },
       ],
     },
@@ -99,15 +127,15 @@ const translations = {
     // Pricing
     pricing: {
       tagline: "VERÐ",
-      title: "Verð og þjónustuleiðir",
+      title: "Sveigjanleg verðlögð þjónusta",
       description:
-        "Endanlegt verð ræðst af umfangi rekstrar og er ákveðið eftir stutt kynningarsamtal.",
-      cta: "Bóka samtal",
+        "Við bjóðum upp á þrjú þjónustustig sem henta fyrirtækjum á öllum stærðum. Verð ræðst af umfangi rekstrar og er ákveðið í samráði við þig eftir stutt kynningarsamtal.",
+      cta: "Fá persónulegt verðmat",
       tiers: [
         {
           name: "Grunnþjónusta",
-          price: "frá 60.000 kr",
-          period: "/ mánuði",
+          price: "",
+          period: "",
           desc: "Fyrir einstaklinga og minnstu fyrirtækin.",
           features: [
             "Bókhald og skráning",
@@ -118,8 +146,8 @@ const translations = {
         },
         {
           name: "Hefðbundin þjónusta",
-          price: "frá 100.000 kr",
-          period: "/ mánuði",
+          price: "",
+          period: "",
           desc: "Alhliða þjónusta fyrir fyrirtæki í vexti.",
           features: [
             "Allt í Grunnþjónustu",
@@ -130,8 +158,8 @@ const translations = {
         },
         {
           name: "Rekstrarsýn",
-          price: "frá 180.000 kr",
-          period: "/ mánuði",
+          price: "",
+          period: "",
           desc: "Full yfirsýn og ráðgjöf fyrir eigendur.",
           features: [
             "Allt í Hefðbundinni þjónustu",
@@ -147,7 +175,36 @@ const translations = {
       tagline: "UM OKKUR",
       title: "Akkúrat Fjármál ehf.",
       description:
-        "Við búum að áratuga reynslu af rekstri fyrirtækja í ólíkum greinum. Góð yfirsýn skiptir höfuðmáli við rétta ákvarðanatöku. Markmið okkar er að veita þér sem bestar upplýsingar um stöðuna hverju sinni.",
+        "Akkúrat Fjármál ehf. var stofnað af Rakel Þórhallsdóttur sem hefur M.Acc. gráðu í reikningshaldi og endurskoðun og á að baki áratuga reynslu af rekstri fyrirtækja og fjármálastjórn. Góð yfirsýn skiptir höfuðmáli við rétta ákvarðanatöku. Markmið okkar er að veita þér sem bestar upplýsingar um stöðuna hverju sinni. Við fylgjum þér eftir alla leið.",
+    },
+    // Onboarding
+    onboarding: {
+      tagline: "HVERNIG BYRJUM VIÐ",
+      title: "Einföld uppsetning í fjórum skrefum",
+      description: "Við gerum ferlið eins einfalt og mögulegt er svo þú getir einbeitt þér að rekstrinum.",
+      steps: [
+        {
+          number: "01",
+          title: "Fyrsta samtal",
+          description: "Við ræðum þarfir þínar og mat á umfangi í ókeypis kynningarsamtali.",
+        },
+        {
+          number: "02",
+          title: "Tilboð og samningur",
+          description: "Þú færð skýrt tilboð sem miðast við þínar þarfir. Við gerum samning þegar þú ert tilbúin/n.",
+        },
+        {
+          number: "03",
+          title: "Uppsetning",
+          description: "Við setjum upp kerfi, sækjum nauðsynleg gögn og komum bókhaldinu í lag.",
+        },
+        {
+          number: "04",
+          title: "Áframhaldandi þjónusta",
+          description: "Við höldum góðu sambandi, færum bókhaldið mánaðarlega og erum alltaf til taks.",
+        },
+      ],
+      cta: "Byrja núna",
     },
     // Contact
     contact: {
@@ -155,7 +212,7 @@ const translations = {
       title: "Hafðu samband",
       description: "Sendu okkur skilaboð eða bókaðu ókeypis kynningarsamtal.",
       emailLabel: "Netfang",
-      email: "akkúrat@akkúrat.is",
+      email: "info@akkuratfjarmal.is",
       phoneLabel: "Sími",
       phone: "772 5040",
       locationLabel: "Staðsetning",
@@ -182,8 +239,7 @@ const translations = {
   en: {
     // Navbar
     nav: {
-      accounting: "Accounting",
-      payroll: "Payroll",
+      services: "Services",
       pricing: "Pricing",
       about: "About",
       contact: "Contact",
@@ -198,6 +254,23 @@ const translations = {
       ctaPrimary: "Book a Consultation",
       ctaSecondary: "See Services",
     },
+    // Services Intro
+    servicesIntro: {
+      items: [
+        {
+          title: "Accounting",
+          description: "We handle accounting and provide detailed and clear information about the financial situation. We remind you of all deadlines and communicate with the authorities if necessary.",
+        },
+        {
+          title: "Payroll",
+          description: "We calculate wages and prepare all statements for banks, pension funds, and unions. We also provide advice on union wage provisions.",
+        },
+        {
+          title: "Annual Reports",
+          description: "We assist you with financial statements and tax returns on a timely basis. We also offer interim statements if requested.",
+        },
+      ],
+    },
     // Services
     services: {
       tagline: "SERVICES",
@@ -205,7 +278,7 @@ const translations = {
       items: [
         {
           title: "Accounting",
-          desc: "We provide general accounting services and handle withholding tax and VAT filings.",
+          desc: "We handle accounting and provide detailed and clear information about the financial situation. We remind you of all deadlines and communicate with the authorities if necessary.",
         },
         {
           title: "Digital Solutions",
@@ -213,19 +286,31 @@ const translations = {
         },
         {
           title: "Payroll",
-          desc: "We offer payroll calculations and payroll accounting for small businesses. We also provide advice on union wage provisions.",
+          desc: "We calculate wages and prepare all statements for banks, pension funds, and unions. We also provide advice on union wage provisions.",
         },
         {
           title: "Annual Reports",
-          desc: "We prepare annual financial statements and handle tax returns for businesses and individuals.",
+          desc: "We assist you with financial statements and tax returns on a timely basis. We also offer interim statements if requested.",
+        },
+        {
+          title: "Tax Returns",
+          desc: "We assist with tax return preparation for businesses, organizations, and individuals.",
+        },
+        {
+          title: "Electronic Invoicing",
+          desc: "We assist with invoice issuance and collection if requested.",
+        },
+        {
+          title: "Tax Authority Communication",
+          desc: "We handle communication with tax authorities when necessary.",
         },
         {
           title: "Consulting",
           desc: "Personal advice and support for decision-making for owners and managers.",
         },
         {
-          title: "Client Portal",
-          desc: "On our client portal, you can always access all key financial information that has been recorded.",
+          title: "Company Formation",
+          desc: "We assist you with choosing the right business structure and guide you through the process of establishing a company.",
         },
       ],
     },
@@ -269,15 +354,15 @@ const translations = {
     // Pricing
     pricing: {
       tagline: "PRICING",
-      title: "Pricing & Service Tiers",
+      title: "Flexible Service Packages",
       description:
-        "Final pricing depends on the scope of operations and is determined after a brief consultation call.",
-      cta: "Book a Call",
+        "We offer three service tiers suitable for businesses of all sizes. Pricing is determined based on the scope of your operations after a brief consultation call.",
+      cta: "Get a Personalized Quote",
       tiers: [
         {
           name: "Basic Service",
-          price: "from ISK 60,000",
-          period: "/ month",
+          price: "",
+          period: "",
           desc: "For individuals and the smallest businesses.",
           features: [
             "Accounting and recording",
@@ -288,8 +373,8 @@ const translations = {
         },
         {
           name: "Standard Service",
-          price: "from ISK 100,000",
-          period: "/ month",
+          price: "",
+          period: "",
           desc: "Comprehensive service for growing businesses.",
           features: [
             "Everything in Basic",
@@ -300,8 +385,8 @@ const translations = {
         },
         {
           name: "Business Insights",
-          price: "from ISK 180,000",
-          period: "/ month",
+          price: "",
+          period: "",
           desc: "Full oversight and advisory for business owners.",
           features: [
             "Everything in Standard",
@@ -317,7 +402,36 @@ const translations = {
       tagline: "ABOUT US",
       title: "Akkúrat Fjármál ehf.",
       description:
-        "We have decades of experience running companies in various industries. Good oversight is crucial for sound decision-making. Our goal is to provide you with the best possible information about your current situation.",
+        "Akkúrat Fjármál ehf. was founded by Rakel Þórhallsdóttir who holds an M.Acc. degree in accounting and auditing with decades of experience in business operations and financial management. Good oversight is crucial for sound decision-making. Our goal is to provide you with the best possible information about your current situation. We support you every step of the way.",
+    },
+    // Onboarding
+    onboarding: {
+      tagline: "HOW WE START",
+      title: "Simple setup in four steps",
+      description: "We make the process as simple as possible so you can focus on your business.",
+      steps: [
+        {
+          number: "01",
+          title: "First Meeting",
+          description: "We discuss your needs and assess the scope in a free consultation meeting.",
+        },
+        {
+          number: "02",
+          title: "Quote and Agreement",
+          description: "You receive a clear quote that fits your needs. We make an agreement when you are ready.",
+        },
+        {
+          number: "03",
+          title: "Setup",
+          description: "We set up the system, gather necessary data, and get your accounting in order.",
+        },
+        {
+          number: "04",
+          title: "Ongoing Service",
+          description: "We maintain good communication, handle your accounting monthly, and are always available.",
+        },
+      ],
+      cta: "Start Now",
     },
     // Contact
     contact: {
@@ -325,7 +439,7 @@ const translations = {
       title: "Get in Touch",
       description: "Send us a message or book a free consultation call.",
       emailLabel: "Email",
-      email: "akkúrat@akkúrat.is",
+      email: "info@akkuratfjarmal.is",
       phoneLabel: "Phone",
       phone: "+354 772 5040",
       locationLabel: "Location",

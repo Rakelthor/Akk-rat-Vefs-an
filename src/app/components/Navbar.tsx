@@ -8,8 +8,7 @@ export function Navbar() {
   const { language, setLanguage, t } = useLanguage();
 
   const navLinks = [
-    { label: t.nav.accounting, href: "#thjonusta" },
-    { label: t.nav.payroll, href: "#launavinnsla" },
+    { label: t.nav.services, href: "#thjonusta" },
     { label: t.nav.pricing, href: "#verd" },
     { label: t.nav.about, href: "#um-okkur" },
     { label: t.nav.contact, href: "#samband" },

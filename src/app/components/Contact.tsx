@@ -38,11 +38,11 @@ export function Contact() {
             <div className="space-y-5" style={{ fontSize: "0.9375rem" }}>
               <div>
                 <p className="text-white/30 mb-1" style={{ fontSize: "0.75rem" }}>{t.contact.emailLabel}</p>
-                <p>{t.contact.email}</p>
+                <a href={`mailto:${t.contact.email}`} className="hover:text-[#34d399] transition-colors">{t.contact.email}</a>
               </div>
               <div>
                 <p className="text-white/30 mb-1" style={{ fontSize: "0.75rem" }}>{t.contact.phoneLabel}</p>
-                <p>{t.contact.phone}</p>
+                <a href={`tel:+354${t.contact.phone.replace(/\s/g, '')}`} className="hover:text-[#34d399] transition-colors">{t.contact.phone}</a>
               </div>
               <div>
                 <p className="text-white/30 mb-1" style={{ fontSize: "0.75rem" }}>{t.contact.locationLabel}</p>
