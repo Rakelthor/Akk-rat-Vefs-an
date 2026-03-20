@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export function Hero() {
   const { t } = useLanguage();
@@ -12,8 +13,8 @@ export function Hero() {
     <section className="min-h-screen flex items-center bg-[#1e293b] relative overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
-        <img 
-          src="/IMG_5876.jpeg"
+        <ImageWithFallback
+          src="https://images.unsplash.com/photo-1677850909381-9a8ed79c41f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxJY2VsYW5kJTIwbGFuZHNjYXBlJTIwbW91bnRhaW5zJTIwbmF0dXJlfGVufDF8fHx8MTc3NDAyMzY0OHww&ixlib=rb-4.1.0&q=80&w=1080"
           alt="Icelandic landscape" 
           className="w-full h-full object-cover"
         />
