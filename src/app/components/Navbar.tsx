@@ -24,7 +24,7 @@ export function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-black/5">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#e5e7eb]/95 backdrop-blur-lg border-b border-black/5">
       <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
         <a
           href="#"
@@ -71,7 +71,7 @@ export function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden bg-white border-b border-black/5 px-6 pb-5 space-y-3">
+        <div className="md:hidden bg-[#e5e7eb] border-b border-black/5 px-6 pb-5 space-y-3">
           {navLinks.map((l) => (
             <button
               key={l.href}
