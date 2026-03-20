@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X, Globe } from "lucide-react";
-import { AkkuratLogo } from "./AkkuratLogo";
+import { GloggvaLogo } from "./GloggvaLogo";
 import { useLanguage } from "../context/LanguageContext";
 
 export function Navbar() {
@@ -33,7 +33,7 @@ export function Navbar() {
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
-          <AkkuratLogo variant="full" theme="dark" size={28} />
+          <GloggvaLogo variant="full" theme="dark" size={40} />
         </a>
 
         <div className="hidden md:flex items-center gap-8">

@@ -13,13 +13,20 @@ export function Contact() {
     setIsSubmitting(true);
 
     const form = e.target as HTMLFormElement;
-    const formDataObj = new FormData(form);
-
+    
     try {
+      // Encode form data for Netlify
+      const formData = new FormData(form);
+      const formEncoded = new URLSearchParams();
+      
+      formData.forEach((value, key) => {
+        formEncoded.append(key, value.toString());
+      });
+
       const response = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formDataObj as any).toString(),
+        body: formEncoded.toString(),
       });
 
       if (response.ok) {

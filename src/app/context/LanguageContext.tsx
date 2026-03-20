@@ -173,9 +173,9 @@ const translations = {
     // About
     about: {
       tagline: "UM OKKUR",
-      title: "Akkúrat Fjármál ehf.",
+      title: "Glöggva ehf.",
       description:
-        "Akkúrat Fjármál ehf. var stofnað af Rakel Þórhallsdóttur sem hefur M.Acc. gráðu í reikningshaldi og endurskoðun og á að baki áratuga reynslu af rekstri fyrirtækja og fjármálastjórn. Góð yfirsýn skiptir höfuðmáli við rétta ákvarðanatöku. Markmið okkar er að veita þér sem bestar upplýsingar um stöðuna hverju sinni. Við fylgjum þér eftir alla leið.",
+        "Glöggva ehf. var stofnað af Rakel Þórhallsdóttir sem hefur M.Acc. gráðu í reikningshaldi og endurskoðun og á að baki áratuga reynslu af rekstri fyrirtækja og fjármálastjórn. Góð yfirsýn skiptir höfuðmáli við rétta ákvarðanatöku. Markmið okkar er að veita þér sem bestar upplýsingar um stöðuna hverju sinni. Við fylgjum þér eftir alla leið.",
     },
     // Onboarding
     onboarding: {
@@ -229,7 +229,7 @@ const translations = {
     },
     // Footer
     footer: {
-      copyright: "Akkúrat Fjármál ehf.",
+      copyright: "Glöggva ehf.",
       services: "Þjónusta",
       pricing: "Verð",
       about: "Um okkur",
@@ -400,9 +400,9 @@ const translations = {
     // About
     about: {
       tagline: "ABOUT US",
-      title: "Akkúrat Fjármál ehf.",
+      title: "Glöggva ehf.",
       description:
-        "Akkúrat Fjármál ehf. was founded by Rakel Þórhallsdóttir who holds an M.Acc. degree in accounting and auditing with decades of experience in business operations and financial management. Good oversight is crucial for sound decision-making. Our goal is to provide you with the best possible information about your current situation. We support you every step of the way.",
+        "Glöggva ehf. was founded by Rakel Þórhallsdóttir who holds an M.Acc. degree in accounting and auditing with decades of experience in business operations and financial management. Good oversight is crucial for sound decision-making. Our goal is to provide you with the best possible information about your current situation. We support you every step of the way.",
     },
     // Onboarding
     onboarding: {
@@ -456,7 +456,7 @@ const translations = {
     },
     // Footer
     footer: {
-      copyright: "Akkúrat Fjármál ehf.",
+      copyright: "Glöggva ehf.",
       services: "Services",
       pricing: "Pricing",
       about: "About",
