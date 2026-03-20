@@ -26,6 +26,8 @@ export function Contact() {
         setSubmitted(true);
         setFormData({ name: "", email: "", message: "" });
         setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        throw new Error("Form submission failed");
       }
     } catch (error) {
       console.error("Form submission error:", error);

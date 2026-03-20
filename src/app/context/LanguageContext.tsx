@@ -127,7 +127,7 @@ const translations = {
     // Pricing
     pricing: {
       tagline: "VERÐ",
-      title: "Sveigjanleg verðlögð þjónusta",
+      title: "Sveigjanleiki í umfangi þjónustu",
       description:
         "Við bjóðum upp á þrjú þjónustustig sem henta fyrirtækjum á öllum stærðum. Verð ræðst af umfangi rekstrar og er ákveðið í samráði við þig eftir stutt kynningarsamtal.",
       cta: "Fá persónulegt verðmat",

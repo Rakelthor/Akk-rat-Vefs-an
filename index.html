@@ -8,6 +8,13 @@
     <meta name="description" content="Akkúrat Fjármál - Fagleg bókhaldsþjónusta fyrir íslensk fyrirtæki. Bókhald, launavinnsla, uppgjör og skattskil." />
   </head>
   <body>
+    <!-- Hidden form for Netlify form detection -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+    </form>
+    
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

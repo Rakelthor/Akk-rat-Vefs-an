@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
+import heroImage from "figma:asset/025e527a4a9607b58f3d3a07dac9ad34224ae36f.png";
 
 export function Hero() {
   const { t } = useLanguage();
@@ -9,8 +10,20 @@ export function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center bg-[#1e293b]">
-      <div className="max-w-5xl mx-auto px-6 pt-32 pb-24 w-full">
+    <section className="min-h-screen flex items-center bg-[#1e293b] relative overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0">
+        <img 
+          src={heroImage} 
+          alt="Icelandic landscape" 
+          className="w-full h-full object-cover"
+        />
+        {/* Dark gradient overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1e293b]/95 via-[#1e293b]/85 to-[#1e293b]/70"></div>
+      </div>
+
+      {/* Content */}
+      <div className="max-w-5xl mx-auto px-6 pt-32 pb-24 w-full relative z-10">
         <div className="max-w-2xl">
           <p
             className="text-[#34d399] mb-6"
