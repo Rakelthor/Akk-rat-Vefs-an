@@ -1,6 +1,5 @@
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
-import heroImage from "figma:asset/025e527a4a9607b58f3d3a07dac9ad34224ae36f.png";
 
 export function Hero() {
   const { t } = useLanguage();
@@ -14,7 +13,7 @@ export function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img 
-          src={heroImage} 
+          src="https://images.unsplash.com/photo-1611560396898-760eb340f639?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpY2VsYW5kJTIwbW91bnRhaW5zJTIwbGFuZHNjYXBlfGVufDF8fHx8MTc3MzkyNjk4OXww&ixlib=rb-4.1.0&q=80&w=1080"
           alt="Icelandic landscape" 
           className="w-full h-full object-cover"
         />
