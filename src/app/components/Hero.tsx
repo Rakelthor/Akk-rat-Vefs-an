@@ -13,7 +13,7 @@ export function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img 
-          src="https://images.unsplash.com/photo-1611560396898-760eb340f639?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpY2VsYW5kJTIwbW91bnRhaW5zJTIwbGFuZHNjYXBlfGVufDF8fHx8MTc3MzkyNjk4OXww&ixlib=rb-4.1.0&q=80&w=1080"
+          src="/IMG_5876.jpeg"
           alt="Icelandic landscape" 
           className="w-full h-full object-cover"
         />
