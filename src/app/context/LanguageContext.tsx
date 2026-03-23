@@ -234,6 +234,7 @@ const translations = {
       pricing: "Verð",
       about: "Um okkur",
       contact: "Samband",
+      privacy: "Persónuvernd",
     },
   },
   en: {
@@ -461,6 +462,7 @@ const translations = {
       pricing: "Pricing",
       about: "About",
       contact: "Contact",
+      privacy: "Privacy Policy",
     },
   },
 };

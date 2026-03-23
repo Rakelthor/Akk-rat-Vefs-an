@@ -8,6 +8,7 @@ export function Footer() {
     { label: t.footer.pricing, href: "#verd" },
     { label: t.footer.about, href: "#um-okkur" },
     { label: t.footer.contact, href: "#samband" },
+    { label: t.footer.privacy, href: "#personuvernd" },
   ];
 
   return (

@@ -6,6 +6,7 @@ import { Onboarding } from "./components/Onboarding";
 import { Pricing } from "./components/Pricing";
 import { About } from "./components/About";
 import { Contact } from "./components/Contact";
+import { PrivacyPolicy } from "./components/PrivacyPolicy";
 import { Footer } from "./components/Footer";
 import { useState, useEffect } from "react";
 
@@ -26,6 +27,7 @@ export default function App() {
         <Pricing />
         <About />
         <Contact />
+        <PrivacyPolicy />
         <Footer />
       </div>
     </LanguageProvider>

@@ -20,11 +20,6 @@ export function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Track Google Ads conversion before form submission
-    if (window.gtag_report_conversion) {
-      window.gtag_report_conversion();
-    }
-
     const form = e.target as HTMLFormElement;
     
     try {
@@ -43,6 +38,13 @@ export function Contact() {
       });
 
       if (response.ok) {
+        // Track Google Ads conversion AFTER successful submission
+        if (window.gtag) {
+          window.gtag('event', 'conversion', {
+            'send_to': 'AW-18029982289/q0YKCPumu4wcENHkrpVD'
+          });
+        }
+        
         setSubmitted(true);
         setFormData({ name: "", email: "", message: "" });
         
