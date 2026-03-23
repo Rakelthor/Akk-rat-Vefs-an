@@ -36,7 +36,7 @@ export function Navbar() {
           <img 
             src="/logos/gloggva.png" 
             alt="Glöggva ehf. - Bókhaldsþjónusta á Íslandi" 
-            className="h-16"
+            className="h-12"
           />
         </a>
 
