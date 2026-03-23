@@ -35,7 +35,7 @@ export function Navbar() {
           <img 
             src="/logos/gloggva.png" 
             alt="Glöggva" 
-            className="h-8"
+            className="h-16"
           />
         </a>
 
