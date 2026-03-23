@@ -2,6 +2,14 @@ import { useState } from "react";
 import { Send } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
+// Declare gtag function for TypeScript
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+    gtag_report_conversion?: (url?: string) => boolean;
+  }
+}
+
 export function Contact() {
   const { t } = useLanguage();
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -11,6 +19,11 @@ export function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+    // Track Google Ads conversion before form submission
+    if (window.gtag_report_conversion) {
+      window.gtag_report_conversion();
+    }
 
     const form = e.target as HTMLFormElement;
     
@@ -32,6 +45,7 @@ export function Contact() {
       if (response.ok) {
         setSubmitted(true);
         setFormData({ name: "", email: "", message: "" });
+        
         setTimeout(() => setSubmitted(false), 5000);
       } else {
         throw new Error("Form submission failed");
