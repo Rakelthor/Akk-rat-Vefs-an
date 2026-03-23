@@ -32,11 +32,24 @@ export function Navbar() {
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
           aria-label="Glöggva bókhald - Fara á forsíðu"
+          className="flex items-center"
         >
           <img 
             src="/logos/gloggva.png" 
             alt="Glöggva ehf. - Bókhaldsþjónusta á Íslandi" 
-            className="h-12"
+            className="h-24"
+            onError={(e) => {
+              // Fallback to text if image doesn't load
+              const target = e.target as HTMLImageElement;
+              target.style.display = 'none';
+              const parent = target.parentElement;
+              if (parent && !parent.querySelector('.logo-fallback')) {
+                const fallback = document.createElement('span');
+                fallback.className = 'logo-fallback text-[#1e293b] font-bold text-4xl';
+                fallback.textContent = 'Glöggva';
+                parent.appendChild(fallback);
+              }
+            }}
           />
         </a>
 
