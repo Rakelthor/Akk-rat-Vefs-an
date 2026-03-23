@@ -1,6 +1,5 @@
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export function Hero() {
   const { t } = useLanguage();
@@ -13,9 +12,13 @@ export function Hero() {
     <section className="min-h-screen flex items-center bg-[#1e293b] relative overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
-        <ImageWithFallback
-          src="https://images.unsplash.com/photo-1677850909381-9a8ed79c41f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxJY2VsYW5kJTIwbGFuZHNjYXBlJTIwbW91bnRhaW5zJTIwbmF0dXJlfGVufDF8fHx8MTc3NDAyMzY0OHww&ixlib=rb-4.1.0&q=80&w=1080"
-          alt="Icelandic landscape" 
+        <img
+          src="/images/IMG_5876.jpeg"
+          alt="Icelandic landscape"
+          onError={(e) => {
+            // Fallback to Unsplash if local image not found (for preview purposes)
+            e.currentTarget.src = "https://images.unsplash.com/photo-1665310127352-a7be56238f6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpY2VsYW5kJTIwbGFuZHNjYXBlJTIwbW91bnRhaW5zJTIwZHJhbWF0aWN8ZW58MXx8fHwxNzc0MjYyNTY1fDA&ixlib=rb-4.1.0&q=80&w=1080";
+          }}
           className="w-full h-full object-cover"
         />
         {/* Dark gradient overlay for better text readability */}

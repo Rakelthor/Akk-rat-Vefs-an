@@ -17,15 +17,6 @@ export function Footer() {
           <span className="text-white/40" style={{ fontSize: "0.8125rem" }}>
             &copy; {new Date().getFullYear()} {t.footer.copyright}
           </span>
-          <a
-            href="https://akkuratfjarmal.is"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/30 hover:text-white/60 transition-colors"
-            style={{ fontSize: "0.75rem" }}
-          >
-            akkuratfjarmal.is
-          </a>
         </div>
         <div className="flex gap-6">
           {footerLinks.map((l) => (

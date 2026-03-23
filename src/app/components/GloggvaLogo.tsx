@@ -1,5 +1,3 @@
-import logoImage from "figma:asset/d8154f7b8e60a22baf07f94433446a45e941d56f.png";
-
 interface LogoProps {
   variant?: "full" | "icon" | "wordmark";
   theme?: "dark" | "light";
@@ -7,13 +5,29 @@ interface LogoProps {
   className?: string;
 }
 
-export function GloggvaLogo({ size = 48, className }: LogoProps) {
+export function GloggvaLogo({ size = 48, theme = "dark", className }: LogoProps) {
+  const color = theme === "dark" ? "#1e293b" : "#ffffff";
+  
   return (
-    <img 
-      src={logoImage} 
-      alt="Glöggva" 
+    <svg 
+      width={size * 3.5} 
+      height={size} 
+      viewBox="0 0 350 100" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
       className={className}
-      style={{ height: size, width: 'auto' }}
-    />
+    >
+      <text
+        x="10"
+        y="70"
+        fontFamily="system-ui, -apple-system, sans-serif"
+        fontSize="70"
+        fontWeight="700"
+        letterSpacing="-2"
+        fill={color}
+      >
+        GLÖGGVA
+      </text>
+    </svg>
   );
 }
