@@ -14,7 +14,7 @@ export function Hero() {
       <div className="absolute inset-0">
         <img
           src="/images/IMG_5876.jpeg"
-          alt="Icelandic landscape"
+          alt="Glöggva bókhald - Íslenskt fjallasvipmynd með dramatískri náttúru"
           onError={(e) => {
             // Fallback to Unsplash if local image not found (for preview purposes)
             e.currentTarget.src = "https://images.unsplash.com/photo-1665310127352-a7be56238f6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpY2VsYW5kJTIwbGFuZHNjYXBlJTIwbW91bnRhaW5zJTIwZHJhbWF0aWN8ZW58MXx8fHwxNzc0MjYyNTY1fDA&ixlib=rb-4.1.0&q=80&w=1080";

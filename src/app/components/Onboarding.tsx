@@ -15,7 +15,12 @@ export function Onboarding() {
           <p className="text-sm font-medium tracking-wider text-accent mb-3">
             {onboarding.tagline}
           </p>
-          <h2 className="mb-4">{onboarding.title}</h2>
+          <h2 
+            className="mb-4 text-primary"
+            style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.2 }}
+          >
+            {onboarding.title}
+          </h2>
           <p className="text-base text-body-secondary">
             {onboarding.description}
           </p>

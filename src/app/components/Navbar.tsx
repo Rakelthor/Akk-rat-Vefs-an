@@ -31,10 +31,11 @@ export function Navbar() {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
+          aria-label="Glöggva bókhald - Fara á forsíðu"
         >
           <img 
             src="/logos/gloggva.png" 
-            alt="Glöggva" 
+            alt="Glöggva ehf. - Bókhaldsþjónusta á Íslandi" 
             className="h-16"
           />
         </a>
