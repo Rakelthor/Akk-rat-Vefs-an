@@ -1,8 +1,9 @@
 import { useLanguage } from "../context/LanguageContext";
-import profileImage from "figma:asset/6afac1329ae710508d72650cddfd09cfdae97e74.png";
+import { useState } from "react";
 
 export function About() {
   const { t } = useLanguage();
+  const [imageError, setImageError] = useState(false);
 
   return (
     <section id="um-okkur" className="py-28 bg-white">
@@ -25,15 +26,18 @@ export function About() {
               {t.about.description}
             </p>
           </div>
-          <div className="flex justify-center md:justify-end">
-            <div className="relative w-full max-w-[200px]">
-              <img 
-                src={profileImage} 
-                alt="Rakel Þórhallsdóttir - Founder of Glöggva ehf." 
-                className="w-full h-auto rounded-2xl shadow-lg"
-              />
+          {!imageError && (
+            <div className="flex justify-center md:justify-end">
+              <div className="relative w-full max-w-[200px]">
+                <img 
+                  src="/images/rakel-profile.jpg"
+                  alt="Rakel Þórhallsdóttir - Founder of Glöggva ehf." 
+                  className="w-full h-auto rounded-2xl shadow-lg"
+                  onError={() => setImageError(true)}
+                />
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </section>

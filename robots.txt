@@ -1,0 +1,13 @@
+# robots.txt for https://gloggva.is/
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://gloggva.is/sitemap.xml
+
+# Disallow admin or private areas (if any in future)
+# Disallow: /admin/
+
+# Crawl-delay for good practice (optional)
+Crawl-delay: 0.5
