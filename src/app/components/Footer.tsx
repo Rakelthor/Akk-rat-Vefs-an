@@ -34,7 +34,7 @@ export function Footer() {
                       1. Inngangur
                     </h3>
                     <p>
-                      Glöggva ehf. (kennitala: XXX-XXXX) ("við", "okkar", "okkur") virðir friðhelgi einkalífs þíns og skuldbindur sig til að vernda persónuupplýsingar þínar. Þessi persónuverndarstefna útskýrir hvernig við söfnum, notum, geymum og verndum persónuupplýsingar þínar í samræmi við lög um persónuvernd og meðferð persónuupplýsinga (nr. 90/2018) og Almenna persónuverndarreglugerð ESB (GDPR).
+                      Glöggva ehf. (ID: 310177-5129) ("við", "okkar", "okkur") virðir friðhelgi einkalífs þíns og skuldbindur sig til að vernda persónuupplýsingar þínar. Þessi persónuverndarstefna útskýrir hvernig við söfnum, notum, geymum og verndum persónuupplýsingar þínar í samræmi við lög um persónuvernd og meðferð persónuupplýsinga (nr. 90/2018) og Almenna persónuverndarreglugerð ESB (GDPR).
                     </p>
                   </section>
 
@@ -238,7 +238,7 @@ export function Footer() {
                       1. Introduction
                     </h3>
                     <p>
-                      Glöggva ehf. (ID: XXX-XXXX) ("we", "our", "us") respects your privacy and is committed to protecting your personal data. This privacy policy explains how we collect, use, store, and protect your personal information in accordance with Icelandic Data Protection Act (No. 90/2018) and the EU General Data Protection Regulation (GDPR).
+                      Glöggva ehf. (ID: 310177-5129) ("we", "our", "us") respects your privacy and is committed to protecting your personal data. This privacy policy explains how we collect, use, store, and protect your personal information in accordance with Icelandic Data Protection Act (No. 90/2018) and the EU General Data Protection Regulation (GDPR).
                     </p>
                   </section>
 

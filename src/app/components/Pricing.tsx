@@ -1,4 +1,4 @@
-import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, X } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 export function Pricing() {
@@ -79,9 +79,26 @@ export function Pricing() {
                       </span>
                     </li>
                   ))}
+                  {tier.notIncluded && tier.notIncluded.map((f) => (
+                    <li key={f} className="flex items-start gap-3">
+                      <X
+                        size={15}
+                        className={`mt-0.5 flex-shrink-0 ${isFeatured ? "text-red-400" : "text-red-500"}`}
+                      />
+                      <span
+                        style={{ fontSize: "0.875rem" }}
+                        className={isFeatured ? "text-white/60" : "text-muted-foreground"}
+                      >
+                        {f}
+                      </span>
+                    </li>
+                  ))}
                 </ul>
                 <button
-                  onClick={() => scrollTo("#samband")}
+                  onClick={() => {
+                    localStorage.setItem('selectedTier', tier.name);
+                    scrollTo("#samband");
+                  }}
                   className={`w-full py-3 rounded-lg flex items-center justify-center gap-2 transition-colors cursor-pointer ${
                     isFeatured
                       ? "bg-accent text-white hover:bg-accent/90"
@@ -89,7 +106,7 @@ export function Pricing() {
                   }`}
                   style={{ fontSize: "0.875rem", fontWeight: 500 }}
                 >
-                  {t.pricing.cta}
+                  {tier.name}
                   <ArrowRight size={15} />
                 </button>
               </div>

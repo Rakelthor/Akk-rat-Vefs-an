@@ -27,6 +27,10 @@ const translations = {
       ctaPrimary: "Bóka kynningarsamtal",
       ctaSecondary: "Sjá þjónustu",
     },
+    // Introduction
+    introduction: {
+      text: "Glöggva var stofnað í þeim tilgangi að auðvelda stjórnendum fyrirtækja yfirsýn yfir reksturinn sinn til þess að geta tekið réttar ákvarðanir tímanlega. Með því að gera bókhaldið að fullu rafrænt næst ekki bara fram vinnusparnaður við bókhald heldur einnig rauntíma yfirsýn yfir rekstrarárangur. Í stað þess að færa bókhald til þess að uppfylla reglugerðir næst dýrmæt tenging við gögnin þín sem sýna stöðuna tímanlega. Við bjóðum einnig upp á mánaðarleg yfirlit þar sem við förum yfir stöðuna. Með þessum hætti ætti ekkert að koma á óvart þegar ársreikningurinn er kláraður.",
+    },
     // Services Intro
     servicesIntro: {
       items: [
@@ -50,16 +54,16 @@ const translations = {
       title: "Hvað getum við gert fyrir þig?",
       items: [
         {
-          title: "Bókhald",
-          desc: "Við færum bókhald og setjum fram upplýsingar um reksturinn mjög á skýran og greinargóðan hátt. Við minnum þig tímanlega á öll skil til yfirvalda og sinnum samskiptum við hið opinbera ef þörf krefur.",
+          title: "Innleiðing",
+          desc: "Við aðstoðum þig við að innleiða allar þær lausnir sem auðvelda bókhaldið og þína yfirsýn. Innleiðingin er innifalin og verðið er fast og fyrirsjáanlegt.",
         },
         {
-          title: "Rafrænar lausnir",
-          desc: "Við aðstoðum við innleiðingu á rafrænum lausnum sem einfalda bókhaldið og bæta yfirsýn.",
+          title: "Rafrænt Bókhald",
+          desc: "Allar tekjur, reikningar og kvittanir fara rafrænt inn í bókhaldið. Rafrænt bókhald auðveldar þér að fylgjast með stöðunni hverju sinni.",
         },
         {
-          title: "Laun",
-          desc: "Við reiknum fyrir launin og sjáum um að útbúa allar skilagreinar til banka, lífeyrissjóða og stéttarfélaga. Við veitum einnig ráðgjöf um ákvæði stéttarfélaga um laun.",
+          title: "Launavinnsla",
+          desc: "Við reiknum launin í Payday eða DK og sjáum um að skila öllum skilagreinum til banka, lífeyrissjóða og stéttarfélaga.",
         },
         {
           title: "Ársreikningar",
@@ -68,18 +72,6 @@ const translations = {
         {
           title: "Framtalsgerð",
           desc: "Við aðstoðum við framtalsgerð fyrir fyrirtæki, félagasamtök og einstaklinga.",
-        },
-        {
-          title: "Rafrænir reikningar",
-          desc: "Við aðstoðum við útgáfu reikninga og innheimtu þeirra ef þess er óskað.",
-        },
-        {
-          title: "Samskipti við yfirvöld",
-          desc: "Við önnumst samskipti við skattayfirvöld þegar þörf krefur.",
-        },
-        {
-          title: "Ráðgjöf",
-          desc: "Persónuleg ráðgjöf og stuðningur við ákvarðanatöku fyrir eigendur og stjórnendur.",
         },
         {
           title: "Stofnun fyrirtækja",
@@ -130,42 +122,55 @@ const translations = {
       title: "Sveigjanleiki í umfangi þjónustu",
       description:
         "Við bjóðum upp á þrjú þjónustustig sem henta fyrirtækjum á öllum stærðum. Verð ræðst af umfangi rekstrar og er ákveðið í samráði við þig eftir stutt kynningarsamtal.",
-      cta: "Fá persónulegt verðmat",
       tiers: [
         {
-          name: "Grunnþjónusta",
-          price: "",
-          period: "",
+          name: "Grunnur",
+          price: "100.000 kr.",
+          period: "á mánuði +vsk",
           desc: "Fyrir einstaklinga og minnstu fyrirtækin.",
+          cta: "Fáðu tilboð í grunnþjónustu",
           features: [
-            "Bókhald og skráning",
-            "VSK-skil",
-            "Ársreikningur",
-            "Tölvupóststuðningur",
+            "Reglulegt bókhald",
+            "Afstemming bankareikninga",
+            "Uppgjör",
+            "Tölvupóst stuðningur",
+          ],
+          notIncluded: [
+            "Launavinnsla",
+            "Skil á ársreikningi",
+            "Innheimta reikninga",
           ],
         },
         {
-          name: "Hefðbundin þjónusta",
-          price: "",
-          period: "",
-          desc: "Alhliða þjónusta fyrir fyrirtæki í vexti.",
+          name: "Sproti",
+          price: "200.000 kr.",
+          period: "á mánuði +vsk",
+          desc: "Alhliða bókhaldsþjónusta fyrir stækkandi fyrirtæki.",
+          cta: "Fáðu tilboð í almenna þjónustu",
           features: [
-            "Allt í Grunnþjónustu",
-            "Launavinnsla og staðgreiðsla",
-            "Mánaðarlegt yfirlit",
-            "Persónulegur tengiliður",
+            "Allt í grunni",
+            "Afstemming bókhalds",
+            "Launavinnsla",
+            "VSK uppgjör og skil",
+            "Skil á ársreikningi",
+            "Mánaðarlegt rekstraryfirlit",
+            "Mánaðarlegir fundir",
           ],
         },
         {
-          name: "Rekstrarsýn",
-          price: "",
-          period: "",
-          desc: "Full yfirsýn og ráðgjöf fyrir eigendur.",
+          name: "Vöxtur",
+          price: "300.000 kr.",
+          period: "á mánuði +vsk",
+          desc: "Full yfirsýn og ráðgjöf fyrir stærri fyrirtæki.",
+          cta: "Fáðu tilboð í rekstrarsýn",
           features: [
-            "Allt í Hefðbundinni þjónustu",
-            "Rekstrargreining",
-            "Fjármálaráðgjöf",
+            "Allt í sprota",
+            "Launavinnsla fyrir 50+",
             "Forgangsþjónusta",
+            "Fjármálaráðgjöf",
+            "Samskipti við RSK",
+            "Milli uppgjör",
+            "Aðstoð við talningar",
           ],
         },
       ],
@@ -255,6 +260,10 @@ const translations = {
       ctaPrimary: "Book a Consultation",
       ctaSecondary: "See Services",
     },
+    // Introduction
+    introduction: {
+      text: "Glöggva was founded with the goal of simplifying business owners' oversight of their financial situation to make better decisions on a timely basis. By fully digitizing accounting, we not only save on accounting costs but also provide real-time oversight of financial arrangements. Instead of handling accounting to meet regulations, we offer dynamic access to your data, which shows the status in real-time. We also offer monthly overviews where we review the situation. This way, there should be no surprises when the annual report is complete.",
+    },
     // Services Intro
     servicesIntro: {
       items: [
@@ -278,16 +287,16 @@ const translations = {
       title: "How can we help you?",
       items: [
         {
-          title: "Accounting",
-          desc: "We handle accounting and provide detailed and clear information about the financial situation. We remind you of all deadlines and communicate with the authorities if necessary.",
+          title: "Digital Journey",
+          desc: "We help you implement all the solutions that simplify accounting and improve your oversight. Implementation is included and pricing is fixed and predictable.",
         },
         {
-          title: "Digital Solutions",
-          desc: "We assist with implementing digital solutions that simplify bookkeeping and improve oversight.",
+          title: "Electronic Accounting",
+          desc: "All income, invoices, and receipts go electronically into the accounting. Electronic accounting makes it easier for you to track the status at any time.",
         },
         {
-          title: "Payroll",
-          desc: "We calculate wages and prepare all statements for banks, pension funds, and unions. We also provide advice on union wage provisions.",
+          title: "Payroll Processing",
+          desc: "We calculate wages in Payday or DK and handle all filing statements to banks, pension funds, and unions.",
         },
         {
           title: "Annual Reports",
@@ -296,18 +305,6 @@ const translations = {
         {
           title: "Tax Returns",
           desc: "We assist with tax return preparation for businesses, organizations, and individuals.",
-        },
-        {
-          title: "Electronic Invoicing",
-          desc: "We assist with invoice issuance and collection if requested.",
-        },
-        {
-          title: "Tax Authority Communication",
-          desc: "We handle communication with tax authorities when necessary.",
-        },
-        {
-          title: "Consulting",
-          desc: "Personal advice and support for decision-making for owners and managers.",
         },
         {
           title: "Company Formation",
@@ -361,39 +358,53 @@ const translations = {
       cta: "Get a Personalized Quote",
       tiers: [
         {
-          name: "Basic Service",
-          price: "",
-          period: "",
+          name: "Foundation",
+          price: "100,000 ISK",
+          period: "per month +VAT",
           desc: "For individuals and the smallest businesses.",
+          cta: "Get a quote for basic service",
           features: [
-            "Accounting and recording",
-            "VAT filing",
-            "Annual financial statement",
+            "Regular bookkeeping",
+            "Bank reconciliation",
+            "Financial statements",
             "Email support",
           ],
-        },
-        {
-          name: "Standard Service",
-          price: "",
-          period: "",
-          desc: "Comprehensive service for growing businesses.",
-          features: [
-            "Everything in Basic",
-            "Payroll and withholding tax",
-            "Monthly overview",
-            "Personal contact person",
+          notIncluded: [
+            "Payroll",
+            "Annual reports",
+            "Invoice collection",
           ],
         },
         {
-          name: "Business Insights",
-          price: "",
-          period: "",
-          desc: "Full oversight and advisory for business owners.",
+          name: "Sprout",
+          price: "200,000 ISK",
+          period: "per month +VAT",
+          desc: "Comprehensive service for growing businesses.",
+          cta: "Get a quote for standard service",
           features: [
-            "Everything in Standard",
-            "Business analysis",
-            "Financial consulting",
+            "Everything in Foundation",
+            "Bookkeeping reconciliation",
+            "Payroll",
+            "VAT settlement and filing",
+            "Annual report filing",
+            "Monthly financial overview",
+            "Monthly meetings",
+          ],
+        },
+        {
+          name: "Growth",
+          price: "300,000 ISK",
+          period: "per month +VAT",
+          desc: "Full oversight and advisory for larger businesses.",
+          cta: "Get a quote for business insights",
+          features: [
+            "Everything in Sprout",
+            "Payroll for 50+ employees",
             "Priority service",
+            "Financial consulting",
+            "Tax authority communication",
+            "Interim reports",
+            "Inventory count assistance",
           ],
         },
       ],
@@ -489,8 +500,13 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
 export function useLanguage() {
   const context = useContext(LanguageContext);
+  // Provide fallback default value for component preview mode
   if (!context) {
-    throw new Error("useLanguage must be used within LanguageProvider");
+    return {
+      language: "is" as Language,
+      setLanguage: () => {},
+      t: translations.is,
+    };
   }
   return context;
 }

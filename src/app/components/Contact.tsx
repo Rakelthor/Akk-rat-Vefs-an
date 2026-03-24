@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Send } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -11,10 +11,40 @@ declare global {
 }
 
 export function Contact() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedTierMessage, setSelectedTierMessage] = useState("");
+
+  useEffect(() => {
+    const tier = localStorage.getItem('selectedTier');
+    if (tier) {
+      // Convert tier name to proper case for message
+      let tierText = tier;
+      if (tier === 'Grunnur') {
+        tierText = 'Grunn';
+      } else if (tier === 'Sproti') {
+        tierText = 'Sprota';
+      } else if (tier === 'Vöxtur') {
+        tierText = 'Vöxt';
+      } else if (tier === 'Foundation') {
+        tierText = 'Foundation';
+      } else if (tier === 'Sprout') {
+        tierText = 'Sprout';
+      } else if (tier === 'Growth') {
+        tierText = 'Growth';
+      }
+      
+      const message = language === 'is' 
+        ? `Ég óska eftir tilboði í ${tierText}`
+        : `I would like a quote for ${tierText}`;
+      
+      setSelectedTierMessage(message);
+      setFormData(prev => ({ ...prev, message }));
+      localStorage.removeItem('selectedTier');
+    }
+  }, [language]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
