@@ -9,7 +9,7 @@ export function Pricing() {
   };
 
   return (
-    <section id="verd" className="py-28 bg-[#f7f8fa]">
+    <section id="verd" className="bg-[#f7f8fa] px-[0px] py-[66px]">
       <div className="max-w-5xl mx-auto px-6">
         <div className="max-w-lg mb-16">
           <p

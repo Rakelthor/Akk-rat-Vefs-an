@@ -16,13 +16,12 @@ export function About() {
             >
               {t.about.tagline}
             </p>
-            <div className="mb-8">
-              <img 
-                src="/logos/gloggva-logo.png" 
-                alt="Glöggva" 
-                className="h-32"
-              />
-            </div>
+            <h2
+              className="text-primary mb-8"
+              style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.2 }}
+            >
+              Glöggva ehf.
+            </h2>
             <p className="text-muted-foreground mb-6" style={{ fontSize: "1.0625rem", lineHeight: 1.85 }}>
               {t.about.description}
             </p>

@@ -1,5 +1,6 @@
 import { ArrowRight, BookOpen, Cpu, Wallet, FileText, FileCheck, Receipt, Scale, Lightbulb, Building2 } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
+import mountainDrawing from "figma:asset/2200f88df3d004abce43acfa521c8152586d4052.png";
 
 const icons = [BookOpen, Cpu, Wallet, FileText, FileCheck, Receipt, Scale, Lightbulb, Building2];
 
@@ -83,12 +84,12 @@ export function Hero() {
       <section id="thjonusta" className="py-28 bg-[#f7f8fa]">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-16">
-            {/* Logo */}
+            {/* Mountain Drawing */}
             <div className="flex justify-center mb-8">
               <img 
-                src="/logos/gloggva-logo.png" 
-                alt="Glöggva Logo" 
-                className="h-48 w-auto"
+                src="/images/mountain%20top.png" 
+                alt="Mountain Top" 
+                className="h-40 w-auto"
               />
             </div>
             

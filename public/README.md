@@ -1,6 +1,6 @@
-# Logos Directory
+# Images Directory
 
-Place your Glöggva logo here:
-- gloggva.png (recommended: transparent PNG, ~200px height for best quality)
+Place your hero image here:
+- IMG_5876.jpeg (or img_5876.jpeg)
 
-This directory contains logo files used in the navbar and throughout the website.
+This directory contains images used throughout the Glöggva website.
