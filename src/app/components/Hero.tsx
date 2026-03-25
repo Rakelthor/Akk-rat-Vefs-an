@@ -88,7 +88,7 @@ export function Hero() {
               <img 
                 src="/logos/gloggva-logo.png" 
                 alt="Glöggva Logo" 
-                className="h-12 w-auto"
+                className="h-48 w-auto"
               />
             </div>
             

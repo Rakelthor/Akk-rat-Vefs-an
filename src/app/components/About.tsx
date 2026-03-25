@@ -20,7 +20,7 @@ export function About() {
               <img 
                 src="/logos/gloggva-logo.png" 
                 alt="Glöggva" 
-                className="h-8"
+                className="h-32"
               />
             </div>
             <p className="text-muted-foreground mb-6" style={{ fontSize: "1.0625rem", lineHeight: 1.85 }}>
