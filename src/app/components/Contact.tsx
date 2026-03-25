@@ -95,12 +95,6 @@ export function Contact() {
       <div className="max-w-5xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           <div className="text-white">
-            <p
-              className="text-accent mb-4"
-              style={{ fontSize: "0.875rem", fontWeight: 500, letterSpacing: "0.05em" }}
-            >
-              {t.contact.tagline}
-            </p>
             <h2
               className="mb-8"
               style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.2 }}

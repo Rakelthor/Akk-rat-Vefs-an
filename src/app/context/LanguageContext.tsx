@@ -21,7 +21,8 @@ const translations = {
     // Hero
     hero: {
       tagline: "NÁÐU YFIRSÝN YFIR FJÁRMÁLIN",
-      title: "Bókhald, uppgjör og skattskil",
+      title: "Bókhald, uppgjör og <span class='text-accent'>skattskil</span>",
+      titleEn: "Accounting, Financial Statements & <span class='text-accent'>Tax Filing</span>",
       description:
         "Við bjóðum upp á alhliða bókhalds- og launaþjónustu fyrir minni fyrirtæki og einstaklinga. Við veitum trausta og persónulega þjónustu með áherslu á skýra yfirsýn sem auðveldar ákvörðunartöku.",
       ctaPrimary: "Bóka kynningarsamtal",
@@ -50,8 +51,9 @@ const translations = {
     },
     // Services
     services: {
-      tagline: "SERVICES",
-      title: "Betri yfirsýn bætir reksturinn",
+      tagline: "ÞJÓNUSTA",
+      title: "Betri <span class='text-accent'>yfirsýn</span> bætir reksturinn",
+      titleEn: "Better <span class='text-accent'>Oversight</span> Improves Operations",
       items: [
         {
           title: "Innleiðing",
@@ -119,7 +121,8 @@ const translations = {
     // Pricing
     pricing: {
       tagline: "VERÐ",
-      title: "Föst verðlagning",
+      title: "<span class='text-accent'>Föst</span> verðlagning",
+      titleEn: "<span class='text-accent'>Flexible</span> Service Packages",
       description:
         "Við bjóðum upp á þrjá bókhalds pakka eftir stærð og umfang þjónustunnar. Við metum umfangið í upphafi og ráðleggjum þér hvaða pakki hentar þínu fyrirtæki. Grunnur hentar minnstu fyrirtækjunum og einstaklingum sem þurfa ekki launavinnslu og aðstoð við skattskil. Sproti er hefðbundin bókhaldsþjónusta með skattskilum og mánaðarlegum fundum og rekstraryfirliti. Vöxtur ætlað stærri fyrirtækjum sem þurfa meiri þjónustu og greiðari aðgang að okkur.",
       tiers: [
@@ -178,7 +181,7 @@ const translations = {
     // About
     about: {
       tagline: "UM OKKUR",
-      title: "Glöggva ehf.",
+      title: "Um <span class='text-accent'>okkur</span>",
       description:
         "Glöggva ehf. var stofnað af Rakel Þórhallsdóttir sem hefur M.Acc. gráðu í reikningshaldi og endurskoðun og á að baki yfir áratug af reynslu af rekstri fyrirtækja og fjármálastjórn. Góð yfirsýn skiptir höfuðmáli við rétta ákvarðanatöku. Markmið okkar er að veita þér sem bestar upplýsingar um stöðuna hverju sinni. Við fylgjum þér eftir alla leið.",
     },
@@ -254,7 +257,7 @@ const translations = {
     // Hero
     hero: {
       tagline: "GAIN CLARITY ON YOUR FINANCES",
-      title: "Accounting, Financial Statements & Tax Filing",
+      title: "Accounting, Financial Statements & <span class='text-accent'>Tax Filing</span>",
       description:
         "We offer comprehensive accounting and payroll services for small businesses and individuals. We provide reliable and personalized service with a focus on clear insights that facilitate decision-making.",
       ctaPrimary: "Book a Consultation",
@@ -284,7 +287,7 @@ const translations = {
     // Services
     services: {
       tagline: "SERVICES",
-      title: "Better Oversight Improves Operations",
+      title: "Better <span class='text-accent'>Oversight</span> Improves Operations",
       items: [
         {
           title: "Digital Journey",

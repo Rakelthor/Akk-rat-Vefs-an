@@ -1,6 +1,6 @@
 import { ArrowRight, BookOpen, Cpu, Wallet, FileText, FileCheck, Receipt, Scale, Lightbulb, Building2 } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
-import mountainDrawing from "figma:asset/2200f88df3d004abce43acfa521c8152586d4052.png";
+import mountainDrawing from "figma:asset/e21d1a5fa166bdee196a1483b81416881d968604.png";
 
 const icons = [BookOpen, Cpu, Wallet, FileText, FileCheck, Receipt, Scale, Lightbulb, Building2];
 
@@ -48,9 +48,8 @@ export function Hero() {
                 lineHeight: 1.08,
                 letterSpacing: "-0.025em",
               }}
-            >
-              {t.hero.title}
-            </h1>
+              dangerouslySetInnerHTML={{ __html: t.hero.title }}
+            />
 
             <p
               className="text-white/50 mb-12 max-w-md"
@@ -86,25 +85,14 @@ export function Hero() {
           <div className="text-center mb-16">
             {/* Mountain Drawing */}
             <div className="flex justify-center mb-8">
-              <img 
-                src="/images/mountain%20top.png" 
-                alt="Mountain Top" 
-                className="h-40 w-auto"
-              />
+              <img src={mountainDrawing} alt="Mountain Drawing" className="h-40 w-auto" />
             </div>
             
-            <p
-              className="text-accent mb-4"
-              style={{ fontSize: "0.875rem", fontWeight: 500, letterSpacing: "0.05em" }}
-            >
-              {t.services.tagline}
-            </p>
             <h2
               className="text-primary mx-auto mb-8"
               style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.2 }}
-            >
-              {t.services.title}
-            </h2>
+              dangerouslySetInnerHTML={{ __html: t.services.title }}
+            />
             
             {/* Introduction Text */}
             <div className="max-w-3xl mx-auto mb-12">

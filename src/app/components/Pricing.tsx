@@ -12,18 +12,11 @@ export function Pricing() {
     <section id="verd" className="bg-[#f7f8fa] px-[0px] py-[66px]">
       <div className="max-w-5xl mx-auto px-6">
         <div className="max-w-lg mb-16">
-          <p
-            className="text-accent mb-4"
-            style={{ fontSize: "0.875rem", fontWeight: 500, letterSpacing: "0.05em" }}
-          >
-            {t.pricing.tagline}
-          </p>
           <h2
             className="text-primary mb-5"
             style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.2 }}
-          >
-            {t.pricing.title}
-          </h2>
+            dangerouslySetInnerHTML={{ __html: t.pricing.title }}
+          />
           <p className="text-muted-foreground" style={{ fontSize: "0.9375rem", lineHeight: 1.75 }}>
             {t.pricing.description}
           </p>

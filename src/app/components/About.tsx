@@ -10,18 +10,11 @@ export function About() {
       <div className="max-w-5xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <p
-              className="text-accent mb-4"
-              style={{ fontSize: "0.875rem", fontWeight: 500, letterSpacing: "0.05em" }}
-            >
-              {t.about.tagline}
-            </p>
             <h2
               className="text-primary mb-8"
               style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.2 }}
-            >
-              Glöggva ehf.
-            </h2>
+              dangerouslySetInnerHTML={{ __html: t.about.title }}
+            />
             <p className="text-muted-foreground mb-6" style={{ fontSize: "1.0625rem", lineHeight: 1.85 }}>
               {t.about.description}
             </p>
