@@ -183,7 +183,7 @@ const translations = {
       tagline: "UM OKKUR",
       title: "Um <span class='text-accent'>okkur</span>",
       description:
-        "Glöggva ehf. var stofnað af Rakel Þórhallsdóttir sem hefur M.Acc. gráðu í reikningshaldi og endurskoðun og á að baki yfir áratug af reynslu af rekstri fyrirtækja og fjármálastjórn. Góð yfirsýn skiptir höfuðmáli við rétta ákvarðanatöku. Markmið okkar er að veita þér sem bestar upplýsingar um stöðuna hverju sinni. Við fylgjum þér eftir alla leið.",
+        "Glöggva ehf. er í eigu Rakel Þórhallsdóttur sem er með M.Acc. próf í bókhaldi og endurskoðun með áratuga reynslu í rekstri fyrirtækja og fjármálastjórnun. Góð yfirsýn er afar mikilvæg fyrir trausta ákvarðanatöku. Okkar markmið er að veita þér sem bestar upplýsingar um núverandi stöðu. Við fylgjum þér alla leið.",
     },
     // Onboarding
     onboarding: {
