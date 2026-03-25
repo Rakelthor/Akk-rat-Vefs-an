@@ -16,19 +16,20 @@ export function About() {
             >
               {t.about.tagline}
             </p>
-            <h2
-              className="text-primary mb-8"
-              style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.2 }}
-            >
-              {t.about.title}
-            </h2>
+            <div className="mb-8">
+              <img 
+                src="/logos/gloggva-logo.png" 
+                alt="Glöggva" 
+                className="h-8"
+              />
+            </div>
             <p className="text-muted-foreground mb-6" style={{ fontSize: "1.0625rem", lineHeight: 1.85 }}>
               {t.about.description}
             </p>
           </div>
           {!imageError && (
             <div className="flex justify-center md:justify-end">
-              <div className="relative w-full max-w-[200px]">
+              <div className="relative w-full max-w-[320px]">
                 <img 
                   src="/images/rakel-profile.jpg"
                   alt="Rakel Þórhallsdóttir - Founder of Glöggva ehf." 

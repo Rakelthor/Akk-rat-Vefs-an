@@ -35,7 +35,7 @@ export function Navbar() {
           className="flex items-center"
         >
           <img 
-            src="/logos/gloggva.png" 
+            src="/logos/gloggva-logo.png" 
             alt="Glöggva ehf. - Bókhaldsþjónusta á Íslandi" 
             className="h-24"
             onError={(e) => {

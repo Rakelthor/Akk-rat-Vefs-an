@@ -29,7 +29,7 @@ const translations = {
     },
     // Introduction
     introduction: {
-      text: "Glöggva var stofnað í þeim tilgangi að auðvelda stjórnendum fyrirtækja yfirsýn yfir reksturinn sinn til þess að geta tekið réttar ákvarðanir tímanlega. Með því að gera bókhaldið að fullu rafrænt næst ekki bara fram vinnusparnaður við bókhald heldur einnig rauntíma yfirsýn yfir rekstrarárangur. Í stað þess að færa bókhald til þess að uppfylla reglugerðir næst dýrmæt tenging við gögnin þín sem sýna stöðuna tímanlega. Við bjóðum einnig upp á mánaðarleg yfirlit þar sem við förum yfir stöðuna. Með þessum hætti ætti ekkert að koma á óvart þegar ársreikningurinn er kláraður.",
+      text: "Glöggva var stofnað í þeim tilgangi að auðvelda stjórnendum fyrirtækja yfirsýn yfir reksturinn og auðvelda þannig ákvarðanatöku. Í hröðu rekstrarumhverfi getur skipt sköpum að taka tímanlegar ákvarðanir. Með því að styðjast við rafrænt bókhald og fá mánaðarlegt yfirlit yfir reksturinn getur þú alltaf fylgst með stöðunni. Þannig kemur ekkert á óvart þegar ársreikningurinn er kláraður.",
     },
     // Services Intro
     servicesIntro: {
@@ -50,8 +50,8 @@ const translations = {
     },
     // Services
     services: {
-      tagline: "ÞJÓNUSTA",
-      title: "Hvað getum við gert fyrir þig?",
+      tagline: "SERVICES",
+      title: "Betri yfirsýn bætir reksturinn",
       items: [
         {
           title: "Innleiðing",
@@ -63,7 +63,7 @@ const translations = {
         },
         {
           title: "Launavinnsla",
-          desc: "Við reiknum launin í Payday eða DK og sjáum um að skila öllum skilagreinum til banka, lífeyrissjóða og stéttarfélaga.",
+          desc: "Við reiknum launin í Payday og sjáum um að skila öllum skilagreinum til banka, lífeyrissjóða og stéttarfélaga.",
         },
         {
           title: "Ársreikningar",
@@ -71,7 +71,7 @@ const translations = {
         },
         {
           title: "Framtalsgerð",
-          desc: "Við aðstoðum við framtalsgerð fyrir fyrirtæki, félagasamtök og einstaklinga.",
+          desc: "Við aðstoðum við framtalsgerðina og sjáum um samskipti við RSK ef það eru fyrirspurnir frá þeim.",
         },
         {
           title: "Stofnun fyrirtækja",
@@ -119,9 +119,9 @@ const translations = {
     // Pricing
     pricing: {
       tagline: "VERÐ",
-      title: "Sveigjanleiki í umfangi þjónustu",
+      title: "Föst verðlagning",
       description:
-        "Við bjóðum upp á þrjú þjónustustig sem henta fyrirtækjum á öllum stærðum. Verð ræðst af umfangi rekstrar og er ákveðið í samráði við þig eftir stutt kynningarsamtal.",
+        "Við bjóðum upp á þrjá bókhalds pakka eftir stærð og umfang þjónustunnar. Við metum umfangið í upphafi og ráðleggjum þér hvaða pakki hentar þínu fyrirtæki. Grunnur hentar minnstu fyrirtækjunum og einstaklingum sem þurfa ekki launavinnslu og aðstoð við skattskil. Sproti er hefðbundin bókhaldsþjónusta með skattskilum og mánaðarlegum fundum og rekstraryfirliti. Vöxtur ætlað stærri fyrirtækjum sem þurfa meiri þjónustu og greiðari aðgang að okkur.",
       tiers: [
         {
           name: "Grunnur",
@@ -180,7 +180,7 @@ const translations = {
       tagline: "UM OKKUR",
       title: "Glöggva ehf.",
       description:
-        "Glöggva ehf. var stofnað af Rakel Þórhallsdóttir sem hefur M.Acc. gráðu í reikningshaldi og endurskoðun og á að baki áratuga reynslu af rekstri fyrirtækja og fjármálastjórn. Góð yfirsýn skiptir höfuðmáli við rétta ákvarðanatöku. Markmið okkar er að veita þér sem bestar upplýsingar um stöðuna hverju sinni. Við fylgjum þér eftir alla leið.",
+        "Glöggva ehf. var stofnað af Rakel Þórhallsdóttir sem hefur M.Acc. gráðu í reikningshaldi og endurskoðun og á að baki yfir áratug af reynslu af rekstri fyrirtækja og fjármálastjórn. Góð yfirsýn skiptir höfuðmáli við rétta ákvarðanatöku. Markmið okkar er að veita þér sem bestar upplýsingar um stöðuna hverju sinni. Við fylgjum þér eftir alla leið.",
     },
     // Onboarding
     onboarding: {
@@ -262,7 +262,7 @@ const translations = {
     },
     // Introduction
     introduction: {
-      text: "Glöggva was founded with the goal of simplifying business owners' oversight of their financial situation to make better decisions on a timely basis. By fully digitizing accounting, we not only save on accounting costs but also provide real-time oversight of financial arrangements. Instead of handling accounting to meet regulations, we offer dynamic access to your data, which shows the status in real-time. We also offer monthly overviews where we review the situation. This way, there should be no surprises when the annual report is complete.",
+      text: "Glöggva was founded to help business owners gain oversight of their operations and facilitate decision-making. In a fast-paced business environment, timely decisions can be crucial. Electronic accounting and monthly reviews give you the ability to always monitor your status. This way, there should be no surprises when the annual report is complete.",
     },
     // Services Intro
     servicesIntro: {
@@ -284,7 +284,7 @@ const translations = {
     // Services
     services: {
       tagline: "SERVICES",
-      title: "How can we help you?",
+      title: "Better Oversight Improves Operations",
       items: [
         {
           title: "Digital Journey",
