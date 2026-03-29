@@ -8,6 +8,15 @@ export function About() {
   return (
     <section id="um-okkur" className="py-28 bg-white">
       <div className="max-w-5xl mx-auto px-6">
+        {/* Logo above section */}
+        <div className="flex justify-start mb-6">
+          <img 
+            src="/logos/gloggva-logo.png" 
+            alt="Glöggva ehf. - Bókhaldsþjónusta á Íslandi" 
+            className="h-32 md:h-40"
+          />
+        </div>
+        
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2

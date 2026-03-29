@@ -26,7 +26,7 @@ export function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#f7f8fa] backdrop-blur-lg border-b border-black/5">
-      <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
         <a
           href="#"
           onClick={(e) => {
@@ -39,7 +39,7 @@ export function Navbar() {
           <img 
             src="/logos/gloggva-logo.png" 
             alt="Glöggva ehf. - Bókhaldsþjónusta á Íslandi" 
-            className="h-24"
+            className="h-32"
             onError={(e) => {
               // Fallback to text if image doesn't load
               const target = e.target as HTMLImageElement;

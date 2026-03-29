@@ -1,5 +1,6 @@
 import { ArrowRight, BookOpen, Cpu, Wallet, FileText, FileCheck, Receipt, Scale, Lightbulb, Building2 } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
+import { motion } from "motion/react";
 
 const icons = [BookOpen, Cpu, Wallet, FileText, FileCheck, Receipt, Scale, Lightbulb, Building2];
 
@@ -18,6 +19,10 @@ export function Hero() {
     "DK Bókhald": "/logos/dk-logo.svg",
     "Payday": "/logos/payday.png",
     "Regla": "/logos/regla.png",
+    "Xero": "/logos/xero.png",
+    "Shopify": "/logos/shopify.png",
+    "Business Central": "/logos/business-central.png",
+    "WooCommerce": "/logos/woocommerce.png",
   };
 
   return (
@@ -134,51 +139,98 @@ export function Hero() {
           </div>
 
           {/* Systems Section */}
-          <div className="mt-20 text-center">
+          <div className="mt-20">
             <h3
-              className="text-primary mb-6"
+              className="text-primary mb-6 text-center"
               style={{ fontSize: "1.5rem", fontWeight: 600 }}
             >
               {t.systems.title}
             </h3>
             
             {/* Description Text */}
-            <div className="max-w-3xl mx-auto mb-10">
+            <div className="max-w-3xl mx-auto mb-10 text-center">
               <p className="text-slate-700 leading-relaxed" style={{ fontSize: "1rem", lineHeight: "1.75" }}>
                 {t.systems.description}
               </p>
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              {t.systems.items.map((system, index) => (
-                <div
-                  key={`${system}-${index}`}
-                  className="bg-white border border-black/8 rounded-2xl p-6 flex flex-col items-center justify-center hover:shadow-md hover:border-accent/30 transition-all duration-300 group"
+            {/* Infinite Scrolling Logo Marquee */}
+            <div className="relative overflow-hidden py-8">
+              {/* Gradient overlays on the sides */}
+              <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#f7f8fa] to-transparent z-10"></div>
+              <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#f7f8fa] to-transparent z-10"></div>
+              
+              <div className="flex">
+                {/* First set of logos */}
+                <motion.div
+                  className="flex gap-8 items-center"
+                  animate={{
+                    x: [0, -1800],
+                  }}
+                  transition={{
+                    x: {
+                      repeat: Infinity,
+                      repeatType: "loop",
+                      duration: 30,
+                      ease: "linear",
+                    },
+                  }}
                 >
-                  <div className="h-12 flex items-center justify-center mb-3">
-                    <img
-                      src={systemLogos[system] || `/logos/${system.toLowerCase().replace(/\s+/g, '-')}.png`}
-                      alt={`${system} logo`}
-                      className="max-h-10 max-w-[100px] object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-60 group-hover:opacity-100"
-                      onError={(e) => {
-                        // Fallback to text if image doesn't load
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = 'none';
-                        const parent = target.closest('div');
-                        if (parent && !parent.querySelector('.logo-fallback')) {
-                          const fallback = document.createElement('span');
-                          fallback.className = 'logo-fallback text-muted-foreground';
-                          fallback.style.fontSize = '0.875rem';
-                          fallback.style.fontWeight = '500';
-                          fallback.textContent = system;
-                          parent.appendChild(fallback);
-                        }
-                      }}
-                    />
-                  </div>
-                  <p className="text-primary text-xs font-medium">{system}</p>
-                </div>
-              ))}
+                  {t.systems.items.map((system, index) => (
+                    <div
+                      key={`${system}-${index}`}
+                      className="bg-white border border-black/8 rounded-2xl p-6 flex items-center justify-center hover:shadow-md hover:border-accent/30 transition-all duration-300 group flex-shrink-0"
+                      style={{ width: "180px", height: "120px" }}
+                    >
+                      <img
+                        src={systemLogos[system] || `/logos/${system.toLowerCase().replace(/\s+/g, '-')}.png`}
+                        alt={`${system} logo`}
+                        className="max-h-12 max-w-[140px] object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-60 group-hover:opacity-100"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const parent = target.closest('div');
+                          if (parent && !parent.querySelector('.logo-fallback')) {
+                            const fallback = document.createElement('span');
+                            fallback.className = 'logo-fallback text-muted-foreground';
+                            fallback.style.fontSize = '0.875rem';
+                            fallback.style.fontWeight = '500';
+                            fallback.textContent = system;
+                            parent.appendChild(fallback);
+                          }
+                        }}
+                      />
+                    </div>
+                  ))}
+                  {/* Duplicate set for seamless loop */}
+                  {t.systems.items.map((system, index) => (
+                    <div
+                      key={`${system}-duplicate-${index}`}
+                      className="bg-white border border-black/8 rounded-2xl p-6 flex items-center justify-center hover:shadow-md hover:border-accent/30 transition-all duration-300 group flex-shrink-0"
+                      style={{ width: "180px", height: "120px" }}
+                    >
+                      <img
+                        src={systemLogos[system] || `/logos/${system.toLowerCase().replace(/\s+/g, '-')}.png`}
+                        alt={`${system} logo`}
+                        className="max-h-12 max-w-[140px] object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-60 group-hover:opacity-100"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const parent = target.closest('div');
+                          if (parent && !parent.querySelector('.logo-fallback')) {
+                            const fallback = document.createElement('span');
+                            fallback.className = 'logo-fallback text-muted-foreground';
+                            fallback.style.fontSize = '0.875rem';
+                            fallback.style.fontWeight = '500';
+                            fallback.textContent = system;
+                            parent.appendChild(fallback);
+                          }
+                        }}
+                      />
+                    </div>
+                  ))}
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>

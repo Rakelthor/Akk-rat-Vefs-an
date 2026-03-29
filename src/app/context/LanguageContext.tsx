@@ -83,9 +83,9 @@ const translations = {
     },
     // Systems
     systems: {
-      title: "Rafrænt bókhald í samvinnu við:",
+      title: "B2B tengingar",
       description: "Við setjum upp B2B þjónustu við viðskiptabankann þinn og færslurnar rata beint í bókhaldið. Allar kvittanir fara sömuleiðis með banka færslunum. Ef slík uppsetning er ekki möguleg má setja upp tengingu við Xero sem getur haldið utan um allar kvittar og reikninga.",
-      items: ["Arion Banki", "Íslandsbanki", "Landsbanki", "DK Bókhald", "Payday", "Regla"],
+      items: ["Arion Banki", "Íslandsbanki", "Landsbanki", "DK Bókhald", "Payday", "Regla", "Xero", "Shopify", "Business Central", "WooCommerce"],
     },
     // Payroll (Launavinnsla)
     payroll: {
@@ -334,7 +334,7 @@ const translations = {
     systems: {
       title: "Electronic accounting in collaboration with:",
       description: "We set up B2B services with your business bank and transactions flow directly into your accounting. All receipts accompany bank transactions. If such a setup is not possible, we can set up an integration with Xero, which can manage all receipts and invoices.",
-      items: ["Arion Banki", "Íslandsbanki", "Landsbanki", "DK Bókhald", "Payday", "Regla"],
+      items: ["Arion Banki", "Íslandsbanki", "Landsbanki", "DK Bókhald", "Payday", "Regla", "Xero", "Shopify", "Business Central", "WooCommerce"],
     },
     // Payroll (Launavinnsla)
     payroll: {
