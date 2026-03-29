@@ -81,6 +81,12 @@ const translations = {
         },
       ],
     },
+    // Systems
+    systems: {
+      title: "Rafrænt bókhald í samvinnu við:",
+      description: "Við setjum upp B2B þjónustu við viðskiptabankann þinn og færslurnar rata beint í bókhaldið. Allar kvittanir fara sömuleiðis með banka færslunum. Ef slík uppsetning er ekki möguleg má setja upp tengingu við Xero sem getur haldið utan um allar kvittar og reikninga.",
+      items: ["Arion Banki", "Íslandsbanki", "Landsbanki", "DK Bókhald", "Payday", "Regla"],
+    },
     // Payroll (Launavinnsla)
     payroll: {
       tagline: "LAUNAVINNSLA",
@@ -128,7 +134,7 @@ const translations = {
       tiers: [
         {
           name: "Grunnur",
-          price: "100.000 kr.",
+          price: "99.000 kr.",
           period: "á mánuði +vsk",
           desc: "Fyrir einstaklinga og minnstu fyrirtækin.",
           cta: "Fáðu tilboð í grunnþjónustu",
@@ -146,7 +152,7 @@ const translations = {
         },
         {
           name: "Sproti",
-          price: "200.000 kr.",
+          price: "199.000 kr.",
           period: "á mánuði +vsk",
           desc: "Alhliða bókhaldsþjónusta fyrir stækkandi fyrirtæki.",
           cta: "Fáðu tilboð í almenna þjónustu",
@@ -162,7 +168,7 @@ const translations = {
         },
         {
           name: "Vöxtur",
-          price: "300.000 kr.",
+          price: "299.000 kr.",
           period: "á mánuði +vsk",
           desc: "Full yfirsýn og ráðgjöf fyrir stærri fyrirtæki.",
           cta: "Fáðu tilboð í rekstrarsýn",
@@ -238,11 +244,20 @@ const translations = {
     // Footer
     footer: {
       copyright: "Glöggva ehf.",
-      services: "Þjónusta",
-      pricing: "Verð",
-      about: "Um okkur",
-      contact: "Samband",
-      privacy: "Persónuvernd",
+      services: "Services",
+      pricing: "Pricing",
+      about: "About",
+      contact: "Contact",
+      privacy: "Privacy Policy",
+    },
+    // Cookie Consent
+    cookies: {
+      title: "Við notum vafrakökur",
+      description:
+        "Við notum vafrakökur til að bæta upplifun þína á vefsíðunni og til að greina umferð. Vafrakökurnar hjálpa okkur einnig að bæta þjónustu okkar og auglýsingar.",
+      accept: "Samþykkja allt",
+      decline: "Hafna",
+      learnMore: "Nánar um vafrakökur",
     },
   },
   en: {
@@ -315,6 +330,12 @@ const translations = {
         },
       ],
     },
+    // Systems
+    systems: {
+      title: "Electronic accounting in collaboration with:",
+      description: "We set up B2B services with your business bank and transactions flow directly into your accounting. All receipts accompany bank transactions. If such a setup is not possible, we can set up an integration with Xero, which can manage all receipts and invoices.",
+      items: ["Arion Banki", "Íslandsbanki", "Landsbanki", "DK Bókhald", "Payday", "Regla"],
+    },
     // Payroll (Launavinnsla)
     payroll: {
       tagline: "PAYROLL",
@@ -362,7 +383,7 @@ const translations = {
       tiers: [
         {
           name: "Foundation",
-          price: "100,000 ISK",
+          price: "99,000 ISK",
           period: "per month +VAT",
           desc: "For individuals and the smallest businesses.",
           cta: "Get a quote for basic service",
@@ -380,7 +401,7 @@ const translations = {
         },
         {
           name: "Sprout",
-          price: "200,000 ISK",
+          price: "199,000 ISK",
           period: "per month +VAT",
           desc: "Comprehensive service for growing businesses.",
           cta: "Get a quote for standard service",
@@ -396,7 +417,7 @@ const translations = {
         },
         {
           name: "Growth",
-          price: "300,000 ISK",
+          price: "299,000 ISK",
           period: "per month +VAT",
           desc: "Full oversight and advisory for larger businesses.",
           cta: "Get a quote for business insights",
@@ -478,6 +499,15 @@ const translations = {
       contact: "Contact",
       privacy: "Privacy Policy",
     },
+    // Cookie Consent
+    cookies: {
+      title: "We use cookies",
+      description:
+        "We use cookies to enhance your experience on our website and to analyze traffic. Cookies also help us improve our services and advertising.",
+      accept: "Accept all",
+      decline: "Decline",
+      learnMore: "Learn more",
+    },
   },
 };
 
@@ -486,13 +516,25 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 );
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>("is");
+  const [language, setLanguage] = useState<Language>(() => {
+    // Initialize from localStorage if available
+    const stored = localStorage.getItem('language');
+    return (stored === 'en' || stored === 'is') ? stored : 'is';
+  });
+
+  const handleSetLanguage = (lang: Language) => {
+    console.log("LanguageProvider: Setting language to", lang);
+    localStorage.setItem('language', lang);
+    setLanguage(lang);
+  };
 
   const value = {
     language,
-    setLanguage,
+    setLanguage: handleSetLanguage,
     t: translations[language],
   };
+
+  console.log("LanguageProvider render - current language:", language);
 
   return (
     <LanguageContext.Provider value={value}>

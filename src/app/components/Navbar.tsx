@@ -19,11 +19,13 @@ export function Navbar() {
   };
 
   const toggleLanguage = () => {
-    setLanguage(language === "is" ? "en" : "is");
+    const newLang = language === "is" ? "en" : "is";
+    console.log("Switching language from", language, "to", newLang);
+    setLanguage(newLang);
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#e5e7eb]/95 backdrop-blur-lg border-b border-black/5">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#f7f8fa] backdrop-blur-lg border-b border-black/5">
       <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
         <a
           href="#"
@@ -66,7 +68,7 @@ export function Navbar() {
           ))}
           <button
             onClick={toggleLanguage}
-            className="text-muted-foreground hover:text-accent transition-colors cursor-pointer flex items-center gap-1.5"
+            className="text-primary hover:text-accent transition-colors cursor-pointer flex items-center gap-1.5 border border-primary/20 rounded-lg px-3 py-1.5 hover:border-accent"
             style={{ fontSize: "0.8125rem", fontWeight: 500 }}
             title={language === "is" ? "Switch to English" : "Skipta yfir í íslensku"}
           >
@@ -88,7 +90,7 @@ export function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden bg-[#e5e7eb] border-b border-black/5 px-6 pb-5 space-y-3">
+        <div className="md:hidden bg-[#f7f8fa] border-b border-black/5 px-6 pb-5 space-y-3">
           {navLinks.map((l) => (
             <button
               key={l.href}
@@ -109,7 +111,7 @@ export function Navbar() {
           </button>
           <button
             onClick={() => scrollTo("#samband")}
-            className="w-full bg-primary text-white px-5 py-2.5 rounded-lg hover:bg-primary/90 transition-colors cursor-pointer"
+            className="w-full bg-accent text-white px-5 py-2.5 rounded-lg hover:bg-accent/90 transition-colors cursor-pointer"
             style={{ fontSize: "0.875rem", fontWeight: 500 }}
           >
             {t.nav.bookCall}

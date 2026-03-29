@@ -4,6 +4,7 @@ import { Pricing } from "./components/Pricing";
 import { About } from "./components/About";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import { CookieConsent } from "./components/CookieConsent";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <About />
       <Contact />
       <Footer />
+      <CookieConsent />
     </div>
   );
 }

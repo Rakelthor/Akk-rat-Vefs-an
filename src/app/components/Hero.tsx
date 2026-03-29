@@ -10,6 +10,16 @@ export function Hero() {
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
 
+  // Map system names to their logo filenames
+  const systemLogos: Record<string, string> = {
+    "Arion Banki": "/logos/arionbanki.jpg",
+    "Íslandsbanki": "/logos/islandsbanki.png",
+    "Landsbanki": "/logos/landsbankinn.png",
+    "DK Bókhald": "/logos/dk-logo.svg",
+    "Payday": "/logos/payday.png",
+    "Regla": "/logos/regla.png",
+  };
+
   return (
     <>
       {/* Hero Introduction Section */}
@@ -26,7 +36,7 @@ export function Hero() {
             className="w-full h-full object-cover"
           />
           {/* Dark gradient overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1e293b]/95 via-[#1e293b]/85 to-[#1e293b]/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1e293b]/85 via-[#1e293b]/75 to-[#1e293b]/60"></div>
         </div>
 
         {/* Content */}
@@ -105,7 +115,7 @@ export function Hero() {
                   className="bg-white border border-black/8 rounded-2xl p-8 text-center hover:shadow-md hover:border-accent/30 transition-all duration-300"
                 >
                   <div className="flex justify-center mb-5">
-                    <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center">
+                    <div className="flex items-center justify-center">
                       {Icon && <Icon className="text-accent" size={28} strokeWidth={1.5} />}
                     </div>
                   </div>
@@ -121,6 +131,55 @@ export function Hero() {
                 </div>
               );
             })}
+          </div>
+
+          {/* Systems Section */}
+          <div className="mt-20 text-center">
+            <h3
+              className="text-primary mb-6"
+              style={{ fontSize: "1.5rem", fontWeight: 600 }}
+            >
+              {t.systems.title}
+            </h3>
+            
+            {/* Description Text */}
+            <div className="max-w-3xl mx-auto mb-10">
+              <p className="text-slate-700 leading-relaxed" style={{ fontSize: "1rem", lineHeight: "1.75" }}>
+                {t.systems.description}
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+              {t.systems.items.map((system, index) => (
+                <div
+                  key={`${system}-${index}`}
+                  className="bg-white border border-black/8 rounded-2xl p-6 flex flex-col items-center justify-center hover:shadow-md hover:border-accent/30 transition-all duration-300 group"
+                >
+                  <div className="h-12 flex items-center justify-center mb-3">
+                    <img
+                      src={systemLogos[system] || `/logos/${system.toLowerCase().replace(/\s+/g, '-')}.png`}
+                      alt={`${system} logo`}
+                      className="max-h-10 max-w-[100px] object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-60 group-hover:opacity-100"
+                      onError={(e) => {
+                        // Fallback to text if image doesn't load
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        const parent = target.closest('div');
+                        if (parent && !parent.querySelector('.logo-fallback')) {
+                          const fallback = document.createElement('span');
+                          fallback.className = 'logo-fallback text-muted-foreground';
+                          fallback.style.fontSize = '0.875rem';
+                          fallback.style.fontWeight = '500';
+                          fallback.textContent = system;
+                          parent.appendChild(fallback);
+                        }
+                      }}
+                    />
+                  </div>
+                  <p className="text-primary text-xs font-medium">{system}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
