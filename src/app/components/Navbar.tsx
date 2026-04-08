@@ -37,7 +37,7 @@ export function Navbar() {
           className="flex items-center"
         >
           <img 
-            src="/logos/gloggva-logo.png" 
+            src="/logos/gloggva/gloggva-logo.svg" 
             alt="Glöggva ehf. - Bókhaldsþjónusta á Íslandi" 
             className="h-32"
             onError={(e) => {
@@ -47,7 +47,11 @@ export function Navbar() {
               const parent = target.parentElement;
               if (parent && !parent.querySelector('.logo-fallback')) {
                 const fallback = document.createElement('span');
-                fallback.className = 'logo-fallback text-[#1e293b] font-bold text-4xl';
+                fallback.className = 'logo-fallback text-[#1e293b]';
+                fallback.style.fontFamily = "'DM Sans', sans-serif";
+                fallback.style.fontWeight = '700';
+                fallback.style.fontSize = '1.5rem';
+                fallback.style.letterSpacing = '-0.02em';
                 fallback.textContent = 'Glöggva';
                 parent.appendChild(fallback);
               }

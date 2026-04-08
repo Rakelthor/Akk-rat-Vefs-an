@@ -13,16 +13,16 @@ export function Hero() {
 
   // Map system names to their logo filenames
   const systemLogos: Record<string, string> = {
-    "Arion Banki": "/logos/arionbanki.jpg",
-    "Íslandsbanki": "/logos/islandsbanki.png",
-    "Landsbanki": "/logos/landsbankinn.png",
-    "DK Bókhald": "/logos/dk-logo.svg",
-    "Payday": "/logos/payday.png",
-    "Regla": "/logos/regla.png",
-    "Xero": "/logos/xero.png",
-    "Shopify": "/logos/shopify.png",
-    "Business Central": "/logos/business-central.png",
-    "WooCommerce": "/logos/woocommerce.png",
+    "Arion Banki": "/logos/partners/banks/arionbanki.jpg",
+    "Íslandsbanki": "/logos/partners/banks/islandsbanki.png",
+    "Landsbanki": "/logos/partners/banks/landsbankinn.png",
+    "DK Bókhald": "/logos/partners/accounting/dk-logo.svg",
+    "Payday": "/logos/partners/integrations/payday.png",
+    "Regla": "/logos/partners/integrations/regla.png",
+    "Xero": "/logos/partners/accounting/xero.jpeg",
+    "Shopify": "/logos/partners/integrations/shopify.png",
+    "Business Central": "/logos/partners/integrations/business-central.png",
+    "WooCommerce": "/logos/partners/integrations/woocommerce.png",
   };
 
   return (

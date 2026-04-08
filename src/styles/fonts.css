@@ -1,3 +1,12 @@
+/* Google Fonts - Manrope */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/* Google Fonts - Work Sans */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap');
+
+/* Google Fonts - DM Sans */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
+
 /* Local Inter Font Files */
 @font-face {
   font-family: 'Inter';
