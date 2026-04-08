@@ -74,14 +74,6 @@ export function Hero() {
 
             <div className="flex flex-wrap gap-4">
               <button
-                onClick={() => scrollTo("#samband")}
-                className="bg-accent text-white px-7 py-3.5 rounded-lg hover:bg-accent/90 transition-colors inline-flex items-center gap-2.5 cursor-pointer"
-                style={{ fontSize: "0.9375rem", fontWeight: 500 }}
-              >
-                {t.hero.ctaPrimary}
-                <ArrowRight size={17} />
-              </button>
-              <button
                 onClick={() => scrollTo("#thjonusta")}
                 className="border border-white/15 text-white/70 px-7 py-3.5 rounded-lg hover:border-white/30 hover:text-white/90 transition-all cursor-pointer"
                 style={{ fontSize: "0.9375rem", fontWeight: 500 }}

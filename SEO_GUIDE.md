@@ -26,7 +26,14 @@
 - ✅ `/public/robots.txt` - Leyfir Google að indexa allt
 - ✅ Hreflang tags fyrir tvítyngt efni
 
-### 5. **Technical SEO**
+### 5. **Favicon & Progressive Web App**
+- ✅ `/public/favicon.ico` - Browser tab icon
+- ✅ `/public/manifest.json` - PWA support
+- ✅ Apple touch icons fyrir iOS
+- ✅ Theme color (#C9E365 lime green)
+- ⚠️ **Pending:** SVG and icon-only versions (see `/FAVICON_STATUS.md`)
+
+### 6. **Technical SEO**
 - ✅ Semantic HTML með réttri heading hierarchy (H1 → H2 → H3)
 - ✅ Alt text fyrir allar myndir
 - ✅ Aria labels fyrir navigation
@@ -34,7 +41,7 @@
 - ✅ Responsive design
 - ✅ Fast loading með local fonts
 
-### 6. **Lykilorð í efni**
+### 7. **Lykilorð í efni**
 Síðan inniheldur nú öll mikilvæg íslensk lykilorð:
 - Bókhald, bókhaldsstofa, bókhaldsþjónusta
 - Launavinnsla, launaþjónusta

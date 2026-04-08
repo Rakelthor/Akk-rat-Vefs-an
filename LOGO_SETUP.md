@@ -6,19 +6,24 @@
 
 Create a new folder `/public/logos/gloggva/` and upload these renamed files:
 
-1. **Primary Logo (SVG)**: 
+1. **Primary Logo (SVG)** ✅ REQUIRED FOR NAVBAR: 
    - Upload: `SVG Vector Files/Transparent Logo.svg` 
    - Rename to: `gloggva-logo.svg`
 
-2. **Primary Logo (PNG Backup)**:
-   - Upload: `PNG Logo Files/Transparent Logo.png`
-   - Rename to: `gloggva-logo.png`
-
-3. **Logo Symbol/Icon**:
+2. **Logo Symbol/Icon (PNG)** ✅ REQUIRED FOR FAVICON:
    - Upload: `PNG Logo Files/Original Logo Symbol.png`
    - Rename to: `gloggva-logo-symbol.png`
 
-4. **Grayscale Version** (optional):
+3. **Logo Symbol/Icon (SVG)** ✅ REQUIRED FOR MODERN FAVICON:
+   - Extract the glasses icon from: `SVG Vector Files/Transparent Logo.svg`
+   - Save as: `gloggva-logo-symbol.svg` (just the icon, no text)
+   - OR use: `SVG Vector Files/Original Logo Symbol.svg` if provided
+
+4. **Primary Logo (PNG Backup)** (Optional):
+   - Upload: `PNG Logo Files/Transparent Logo.png`
+   - Rename to: `gloggva-logo.png`
+
+5. **Grayscale Version** (Optional):
    - Upload: `SVG Vector Files/Grayscale Transparent.svg`
    - Rename to: `gloggva-logo-grayscale.svg`
 
@@ -26,9 +31,11 @@ Create a new folder `/public/logos/gloggva/` and upload these renamed files:
 
 Upload to the `/public/` root folder (NOT in logos):
 
-1. **Favicon ICO**:
+1. **Favicon ICO** (Optional - legacy browsers):
    - Upload: `Favicon/Favicon Transparent.ico`
    - Rename to: `favicon.ico`
+
+**NOTE:** The favicon will work with just the PNG/SVG symbol in step 1. The .ico file is optional for older browsers.
 
 ### 📦 Step 3: Archive Files (Optional) → `/public/logos/gloggva/archive/`
 
@@ -78,6 +85,7 @@ Move existing partner/integration logos to organized subfolders:
 │   │   ├── gloggva-logo.svg            # Primary logo
 │   │   ├── gloggva-logo.png            # PNG fallback
 │   │   ├── gloggva-logo-symbol.png     # Icon only
+│   │   ├── gloggva-logo-symbol.svg     # Modern favicon icon
 │   │   ├── gloggva-logo-grayscale.svg  # Grayscale version
 │   │   └── archive/                     # All other Fiverr files
 │   │       ├── zoom-backgrounds/
