@@ -57,7 +57,7 @@ const translations = {
       items: [
         {
           title: "Innleiðing",
-          desc: "Við aðstoðum þig við að innleiða allar þær lausnir sem auðvelda bókhaldið og þína yfirsýn. Innleiðingin er innifalin og verðið er fast og fyrirsjáanlegt.",
+          desc: "Við aðstoðum þig við að innleiða allar ��ær lausnir sem auðvelda bókhaldið og þína yfirsýn. Innleiðingin er innifalin og verðið er fast og fyrirsjáanlegt.",
         },
         {
           title: "Rafrænt Bókhald",
@@ -85,7 +85,54 @@ const translations = {
     systems: {
       title: "B2B tengingar",
       description: "Við setjum upp B2B þjónustu við viðskiptabankann þinn og færslurnar rata beint í bókhaldið. Allar kvittanir fara sömuleiðis með banka færslunum. Ef slík uppsetning er ekki möguleg má setja upp tengingu við Xero sem getur haldið utan um allar kvittar og reikninga.",
-      items: ["Arion Banki", "Íslandsbanki", "Landsbanki", "DK Bókhald", "Payday", "Regla", "Xero", "Shopify", "Business Central", "WooCommerce"],
+      items: ["Arion Banki", "Íslandsbanki", "Landsbanki", "Payday", "Xero", "Shopify", "WooCommerce"],
+    },
+    // Comparison
+    comparison: {
+      tagline: "AF HVERJU GLÖGGVA",
+      title: "Skiptu yfir í Glöggva fyrir betri yfirsýn og áreiðanlegri þjónustu",
+      heading: "Af hverju að <span class='text-accent'>færa sig yfir</span> til okkar?",
+      description: "Færðu þig yfir til okkar með auðveldum hætti. Við sjáum um að koma bókhaldinu í 100% rafrænt form hjá Payday og bætum yfirsýnina þína strax á fyrsta mánuðinum. Með því að velja bókhaldskerfi Payday má spara kostnað sem fylgir dýrari bókhaldskerfum.",
+      gloggva: "Glöggva",
+      traditional: "Hefðbundið Bókhald",
+      features: {
+        gloggva: [
+          "Rafrænt bókhald með rauntíma yfirsýn",
+          "Fast og fyrirsjáanlegt verð",
+          "Mánaðarleg rekstraryfirsýn og fundir",
+          "Auðvelt aðgengi að þjónustu",
+          "Fyrirbyggjandi ráðgjöf",
+        ],
+        traditional: [
+          "Gamaldags aðferðir og Excel töflur",
+          "Óskýr verðlagning og aukakostnaður",
+          "Aðeins árlegt uppgjör",
+          "Hægari viðbragðstími",
+          "Bregðast við vandamálum fremur en að fyrirbyggja",
+        ],
+      },
+    },
+    // Onboarding
+    onboarding: {
+      title: "Hvernig færir þú þig <span class='text-accent'>yfir</span> til okkar?",
+      cta: "Tala við teymið",
+      steps: [
+        {
+          number: "1",
+          title: "Yfirfærsla gagna",
+          description: "Við sjáum alfarið um að færa allar bókhalds upplýsingar yfir í Payday kerfið. Við sjáum um samskipti við fyrri samstarfsaðila með þínum samþykki.",
+        },
+        {
+          number: "2",
+          title: "Upphafsfundur",
+          description: "Þú færð upphafsfund með þínum tengilið þar sem farið er vel yfir allar forsendur.",
+        },
+        {
+          number: "3",
+          title: "Hefjumst handa",
+          description: "Við hefjumst strax handa og þú heldur þínum rekstri áfram óhindrað.",
+        },
+      ],
     },
     // Payroll (Launavinnsla)
     payroll: {
@@ -189,36 +236,7 @@ const translations = {
       tagline: "UM OKKUR",
       title: "Um <span class='text-accent'>okkur</span>",
       description:
-        "Glöggva ehf. er í eigu Rakel Þórhallsdóttur sem er með M.Acc. próf í bókhaldi og endurskoðun með áratuga reynslu í rekstri fyrirtækja og fjármálastjórnun. Góð yfirsýn er afar mikilvæg fyrir trausta ákvarðanatöku. Okkar markmið er að veita þér sem bestar upplýsingar um núverandi stöðu. Við fylgjum þér alla leið.",
-    },
-    // Onboarding
-    onboarding: {
-      tagline: "HVERNIG BYRJUM VIÐ",
-      title: "Einföld uppsetning í fjórum skrefum",
-      description: "Við gerum ferlið eins einfalt og mögulegt er svo þú getir einbeitt þér að rekstrinum.",
-      steps: [
-        {
-          number: "01",
-          title: "Fyrsta samtal",
-          description: "Við ræðum þarfir þínar og mat á umfangi í ókeypis kynningarsamtali.",
-        },
-        {
-          number: "02",
-          title: "Tilboð og samningur",
-          description: "Þú færð skýrt tilboð sem miðast við þínar þarfir. Við gerum samning þegar þú ert tilbúin/n.",
-        },
-        {
-          number: "03",
-          title: "Uppsetning",
-          description: "Við setjum upp kerfi, sækjum nauðsynleg gögn og komum bókhaldinu í lag.",
-        },
-        {
-          number: "04",
-          title: "Áframhaldandi þjónusta",
-          description: "Við höldum góðu sambandi, færum bókhaldið mánaðarlega og erum alltaf til taks.",
-        },
-      ],
-      cta: "Byrja núna",
+        "Miklar framfarir hafa átt sér stað undanfarin ár í skráningu bókhalds. Með því að nýta sér rafræna skráningu er orðið auðveldara að ná yfirsýn yfir reksturinn eins og hann stendur í dag í stað þess að horfa sífellt í baksýnisspegilinn. Bókhaldsfyrirtækið Glöggva var stofnað af Rakel Þórhallsdóttur sem hefur M.Acc. próf í bókhaldi og endurskoðun ásamt því að hafa áratuga reynslu í rekstri fyrirtækja og fjármálastjórnun. Góð yfirsýn er afar mikilvæg fyrir trausta ákvarðanatöku. Við fylgjum þér alla leið.",
     },
     // Contact
     contact: {
@@ -334,7 +352,54 @@ const translations = {
     systems: {
       title: "Electronic accounting in collaboration with:",
       description: "We set up B2B services with your business bank and transactions flow directly into your accounting. All receipts accompany bank transactions. If such a setup is not possible, we can set up an integration with Xero, which can manage all receipts and invoices.",
-      items: ["Arion Banki", "Íslandsbanki", "Landsbanki", "DK Bókhald", "Payday", "Regla", "Xero", "Shopify", "Business Central", "WooCommerce"],
+      items: ["Arion Banki", "Íslandsbanki", "Landsbanki", "Payday", "Xero", "Shopify", "WooCommerce"],
+    },
+    // Comparison
+    comparison: {
+      tagline: "WHY GLÖGGVA",
+      title: "Switch to Glöggva for better oversight and convenient service",
+      heading: "Why <span class='text-accent'>switch</span> to us?",
+      description: "Switch to us with ease. We handle converting your accounting to 100% electronic format in Payday and improve your oversight from the very first month.",
+      gloggva: "Glöggva",
+      traditional: "Traditional Accounting Office",
+      features: {
+        gloggva: [
+          "Electronic accounting with real-time oversight",
+          "Fixed and predictable pricing",
+          "Monthly financial overview and meetings",
+          "Fast response and personal service",
+          "Proactive advice and forecasting",
+        ],
+        traditional: [
+          "Old-fashioned methods and Excel spreadsheets",
+          "Unclear pricing and additional costs",
+          "Only annual statements",
+          "Long response times",
+          "Reacting to problems rather than preventing them",
+        ],
+      },
+    },
+    // Onboarding
+    onboarding: {
+      title: "How to <span class='text-accent'>switch</span> accountants",
+      cta: "Talk to the Team",
+      steps: [
+        {
+          number: "1",
+          title: "Tell us who you're currently working with",
+          description: "We'll contact your previous accountant to request professional clearance. We'll collect all of your financial data and undertake a thorough review to ensure you're compliant.",
+        },
+        {
+          number: "2",
+          title: "Meet your new Accountant",
+          description: "We'll get you set up correctly on your preferred accounting software and introduce you to your new dedicated accountant. We'll handle all communication with tax authorities about the change.",
+        },
+        {
+          number: "3",
+          title: "Back to business",
+          description: "That's it, we'll begin work right away so you can get back to what you do best.",
+        },
+      ],
     },
     // Payroll (Launavinnsla)
     payroll: {
@@ -439,35 +504,6 @@ const translations = {
       title: "Glöggva ehf.",
       description:
         "Glöggva ehf. was founded by Rakel Þórhallsdóttir who holds an M.Acc. degree in accounting and auditing with decades of experience in business operations and financial management. Good oversight is crucial for sound decision-making. Our goal is to provide you with the best possible information about your current situation. We support you every step of the way.",
-    },
-    // Onboarding
-    onboarding: {
-      tagline: "HOW WE START",
-      title: "Simple setup in four steps",
-      description: "We make the process as simple as possible so you can focus on your business.",
-      steps: [
-        {
-          number: "01",
-          title: "First Meeting",
-          description: "We discuss your needs and assess the scope in a free consultation meeting.",
-        },
-        {
-          number: "02",
-          title: "Quote and Agreement",
-          description: "You receive a clear quote that fits your needs. We make an agreement when you are ready.",
-        },
-        {
-          number: "03",
-          title: "Setup",
-          description: "We set up the system, gather necessary data, and get your accounting in order.",
-        },
-        {
-          number: "04",
-          title: "Ongoing Service",
-          description: "We maintain good communication, handle your accounting monthly, and are always available.",
-        },
-      ],
-      cta: "Start Now",
     },
     // Contact
     contact: {

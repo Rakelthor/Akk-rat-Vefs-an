@@ -1,6 +1,11 @@
 # robots.txt for https://gloggva.is/
 
 User-agent: *
+
+# Block akkúrat.is domain from being indexed
+# (Only index gloggva.is)
+Host: gloggva.is
+
 Allow: /
 
 # Sitemaps

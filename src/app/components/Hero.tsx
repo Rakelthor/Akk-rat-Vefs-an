@@ -1,4 +1,4 @@
-import { ArrowRight, BookOpen, Cpu, Wallet, FileText, FileCheck, Receipt, Scale, Lightbulb, Building2 } from "lucide-react";
+import { ArrowRight, BookOpen, Cpu, Wallet, FileText, FileCheck, Receipt, Scale, Lightbulb, Building2, CheckCircle2, XCircle } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import { motion } from "motion/react";
 
@@ -130,6 +130,112 @@ export function Hero() {
             })}
           </div>
 
+          {/* Comparison Cards */}
+          <div className="mt-20">
+            <h3
+              className="text-primary text-center mb-4"
+              style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.2 }}
+              dangerouslySetInnerHTML={{ __html: t.comparison.heading }}
+            />
+
+            <div className="max-w-3xl mx-auto mb-10 text-center">
+              <p className="text-slate-700 leading-relaxed" style={{ fontSize: "1.0625rem", lineHeight: "1.75" }}>
+                {t.comparison.description}
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Glöggva Card */}
+              <div 
+                className="bg-primary rounded-2xl p-8 hover:shadow-md transition-all duration-300"
+              >
+                <div className="text-center mb-6 pb-4 border-b border-white/10">
+                  <div className="flex justify-center">
+                    <img 
+                      src="/logos/gloggva/gloggva-logo-white.svg" 
+                      alt="Glöggva" 
+                      className="h-10"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  {t.comparison.features.gloggva.map((feature, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <CheckCircle2 className="shrink-0 mt-0.5 text-accent" style={{ width: "20px", height: "20px" }} />
+                      <p className="text-white/75" style={{ fontSize: "0.875rem", lineHeight: 1.75 }}>
+                        {feature}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Traditional Accountants Card */}
+              <div className="bg-white border border-black/8 rounded-2xl p-8 hover:shadow-md transition-all duration-300">
+                <div className="text-center mb-6 pb-4 border-b border-black/8">
+                  <h3 className="text-muted-foreground" style={{ fontSize: "1.25rem", fontWeight: 600 }}>
+                    {t.comparison.traditional}
+                  </h3>
+                </div>
+
+                <div className="space-y-3">
+                  {t.comparison.features.traditional.map((feature, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <XCircle className="shrink-0 mt-0.5" style={{ width: "20px", height: "20px", color: "#d4183d" }} />
+                      <p className="text-muted-foreground" style={{ fontSize: "0.875rem", lineHeight: 1.75 }}>
+                        {feature}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Onboarding Section - How to Switch Accountants */}
+          <div className="mt-20">
+            <h3
+              className="text-primary text-center mb-12"
+              style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.2 }}
+              dangerouslySetInnerHTML={{ __html: t.onboarding.title }}
+            />
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Steps as Cards */}
+              {t.onboarding.steps.map((step, index) => (
+                <div 
+                  key={index} 
+                  className="bg-white border border-black/8 rounded-2xl p-8 hover:shadow-md hover:border-accent/30 transition-all duration-300"
+                >
+                  {/* Number Badge - Outlined Circle */}
+                  <div 
+                    className="w-14 h-14 rounded-full flex items-center justify-center mb-6"
+                    style={{ border: "2px solid #0BB8FC" }}
+                  >
+                    <span style={{ fontSize: "1.5rem", fontWeight: 700, color: "#0BB8FC" }}>
+                      {step.number}
+                    </span>
+                  </div>
+                  
+                  {/* Content */}
+                  <h4 
+                    className="text-primary mb-3"
+                    style={{ fontSize: "1.125rem", fontWeight: 600 }}
+                  >
+                    {step.title}
+                  </h4>
+                  <p 
+                    className="text-muted-foreground"
+                    style={{ fontSize: "0.875rem", lineHeight: 1.75 }}
+                  >
+                    {step.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Systems Section */}
           <div className="mt-20">
             <h3
@@ -174,24 +280,9 @@ export function Hero() {
                       className="bg-white border border-black/8 rounded-2xl p-6 flex items-center justify-center hover:shadow-md hover:border-accent/30 transition-all duration-300 group flex-shrink-0"
                       style={{ width: "180px", height: "120px" }}
                     >
-                      <img
-                        src={systemLogos[system] || `/logos/${system.toLowerCase().replace(/\s+/g, '-')}.png`}
-                        alt={`${system} logo`}
-                        className="max-h-12 max-w-[140px] object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-60 group-hover:opacity-100"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.style.display = 'none';
-                          const parent = target.closest('div');
-                          if (parent && !parent.querySelector('.logo-fallback')) {
-                            const fallback = document.createElement('span');
-                            fallback.className = 'logo-fallback text-muted-foreground';
-                            fallback.style.fontSize = '0.875rem';
-                            fallback.style.fontWeight = '500';
-                            fallback.textContent = system;
-                            parent.appendChild(fallback);
-                          }
-                        }}
-                      />
+                      <span className="text-muted-foreground" style={{ fontSize: "0.875rem", fontWeight: 600 }}>
+                        {system}
+                      </span>
                     </div>
                   ))}
                   {/* Duplicate set for seamless loop */}
