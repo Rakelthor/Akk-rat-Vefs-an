@@ -16,12 +16,9 @@ export function Hero() {
     "Arion Banki": "/logos/partners/banks/arionbanki.jpg",
     "Íslandsbanki": "/logos/partners/banks/islandsbanki.png",
     "Landsbanki": "/logos/partners/banks/landsbankinn.png",
-    "DK Bókhald": "/logos/partners/accounting/dk-logo.svg",
     "Payday": "/logos/partners/integrations/payday.png",
-    "Regla": "/logos/partners/integrations/regla.png",
     "Xero": "/logos/partners/accounting/xero.jpeg",
     "Shopify": "/logos/partners/integrations/shopify.png",
-    "Business Central": "/logos/partners/integrations/business-central.png",
     "WooCommerce": "/logos/partners/integrations/woocommerce.png",
   };
 
@@ -66,7 +63,7 @@ export function Hero() {
             />
 
             <p
-              className="text-white/50 mb-12 max-w-md"
+              className="text-white mb-12 max-w-md"
               style={{ fontSize: "1.0625rem", lineHeight: 1.75 }}
             >
               {t.hero.description}
@@ -75,8 +72,11 @@ export function Hero() {
             <div className="flex flex-wrap gap-4">
               <button
                 onClick={() => scrollTo("#thjonusta")}
-                className="border border-white/15 text-white/70 px-7 py-3.5 rounded-lg hover:border-white/30 hover:text-white/90 transition-all cursor-pointer"
-                style={{ fontSize: "0.9375rem", fontWeight: 500 }}
+                className="px-7 py-3.5 rounded-lg transition-all cursor-pointer bg-accent text-white hover:bg-accent/90"
+                style={{ 
+                  fontSize: "0.9375rem", 
+                  fontWeight: 500
+                }}
               >
                 {t.hero.ctaSecondary}
               </button>
@@ -150,13 +150,9 @@ export function Hero() {
                 className="bg-primary rounded-2xl p-8 hover:shadow-md transition-all duration-300"
               >
                 <div className="text-center mb-6 pb-4 border-b border-white/10">
-                  <div className="flex justify-center">
-                    <img 
-                      src="/logos/gloggva/gloggva-logo-white.svg" 
-                      alt="Glöggva" 
-                      className="h-10"
-                    />
-                  </div>
+                  <h3 className="text-white" style={{ fontSize: "1.25rem", fontWeight: 600 }}>
+                    {t.comparison.gloggva}
+                  </h3>
                 </div>
 
                 <div className="space-y-3">

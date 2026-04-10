@@ -1,0 +1,42 @@
+{
+  "name": "Glöggva ehf. - Bókhaldsþjónusta",
+  "short_name": "Glöggva",
+  "description": "Fagleg bókhaldsþjónusta fyrir íslensk fyrirtæki. Bókhald, launavinnsla, ársreikningar og skattskil.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#C9E365",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/logos/gloggva-logo.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "lang": "is",
+  "dir": "ltr",
+  "categories": ["business", "finance"],
+  "shortcuts": [
+    {
+      "name": "Hafa samband",
+      "short_name": "Samband",
+      "description": "Hafa samband við Glöggva",
+      "url": "/#samband",
+      "icons": []
+    },
+    {
+      "name": "Verðskrá",
+      "short_name": "Verð",
+      "description": "Skoða verðskrá",
+      "url": "/#verdskra",
+      "icons": []
+    }
+  ]
+}

@@ -45,7 +45,7 @@ const translations = {
         },
         {
           title: "Ársreikningar",
-          description: "Við aðstoðum þig tímanlega við uppgjörið og ársreikninginn. Við bjóðum einnig upp á milliuppgjör ef þess er óskað.",
+          description: "Við aðstoðum þig tímanlega við uppgjörið og ársreikninginn. Við bjóðum einnig upp á mánaðarleg yfirlit ef þess er óskað.",
         },
       ],
     },
@@ -57,7 +57,7 @@ const translations = {
       items: [
         {
           title: "Innleiðing",
-          desc: "Við aðstoðum þig við að innleiða allar ��ær lausnir sem auðvelda bókhaldið og þína yfirsýn. Innleiðingin er innifalin og verðið er fast og fyrirsjáanlegt.",
+          desc: "Innleiðing á rafrænum lausnum er innifalin. Verðið er fast og fyrirsjáanlegt.",
         },
         {
           title: "Rafrænt Bókhald",
@@ -69,11 +69,11 @@ const translations = {
         },
         {
           title: "Ársreikningar",
-          desc: "Við aðstoðum þig tímanlega við uppgjörið og ársreikninginn. Við bjóðum einnig upp á milliuppgjör ef þess er óskað.",
+          desc: "Við aðstoðum þig tímanlega við uppgjörið og ársreikninginn. Við bjóðum einnig upp á mánaðarleg yfirlit ef þess er óskað.",
         },
         {
           title: "Framtalsgerð",
-          desc: "Við aðstoðum við framtalsgerðina og sjáum um samskipti við RSK ef það eru fyrirspurnir frá þeim.",
+          desc: "Við sjáum um framtalsgerðina og samskipti við Skattinn. Við tökum einnig að okkur framtalsgerð fyrir einstaklinga og húsfélög.",
         },
         {
           title: "Stofnun fyrirtækja",
@@ -125,7 +125,7 @@ const translations = {
         {
           number: "2",
           title: "Upphafsfundur",
-          description: "Þú færð upphafsfund með þínum tengilið þar sem farið er vel yfir allar forsendur.",
+          description: "Þú færð upphafsfund með þínum tengilið hjá okkur og við förum vel yfir allar forsendur. Saman stillum við upp yfirlitsskýrslu sem auðveldar þér alla ákvarðanatöku.",
         },
         {
           number: "3",

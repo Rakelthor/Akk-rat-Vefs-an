@@ -1,21 +1,23 @@
 {
-  "name": "MyWebSite",
+  "name": "Glöggva ehf. - Bókhaldsþjónusta",
   "short_name": "Glöggva",
+  "description": "Fagleg bókhaldsþjónusta fyrir íslensk fyrirtæki. Bókhald, launavinnsla, ársreikningar og skattskil.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0BB8FC",
   "icons": [
     {
-      "src": "/https://gloggva.is/favicon.ico/web-app-manifest-192x192.png",
+      "src": "/web-app-manifest-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     },
     {
-      "src": "/https://gloggva.is/favicon.ico/web-app-manifest-512x512.png",
+      "src": "/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     }
-  ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  ]
 }
