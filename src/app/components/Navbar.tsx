@@ -8,7 +8,8 @@ export function Navbar() {
 
   const navLinks = [
     { label: t.nav.services, href: "#thjonusta" },
-    { label: t.nav.pricing, href: "#verd" },
+    // { label: t.nav.pricing, href: "#verd" },
+    { label: t.nav.payroll, href: "#laun" },
     { label: t.nav.about, href: "#um-okkur" },
     { label: t.nav.contact, href: "#samband" },
   ];

@@ -197,7 +197,7 @@ export function Hero() {
               dangerouslySetInnerHTML={{ __html: t.onboarding.title }}
             />
 
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 gap-6">
               {/* Steps as Cards */}
               {t.onboarding.steps.map((step, index) => (
                 <div 
@@ -237,9 +237,9 @@ export function Hero() {
             <h3
               className="text-primary mb-6 text-center"
               style={{ fontSize: "1.5rem", fontWeight: 600 }}
-            >
-              {t.systems.title}
-            </h3>
+              dangerouslySetInnerHTML={{ __html: t.systems.title }}
+            />
+
             
             {/* Description Text */}
             <div className="max-w-3xl mx-auto mb-10 text-center">
@@ -273,7 +273,7 @@ export function Hero() {
                   {t.systems.items.map((system, index) => (
                     <div
                       key={`${system}-${index}`}
-                      className="bg-white border border-black/8 rounded-2xl p-6 flex items-center justify-center hover:shadow-md hover:border-accent/30 transition-all duration-300 group flex-shrink-0"
+                      className="bg-white border border-black/8 rounded-2xl p-6 flex items-center justify-center flex-shrink-0"
                       style={{ width: "180px", height: "120px" }}
                     >
                       <span className="text-muted-foreground" style={{ fontSize: "0.875rem", fontWeight: 600 }}>
@@ -285,13 +285,13 @@ export function Hero() {
                   {t.systems.items.map((system, index) => (
                     <div
                       key={`${system}-duplicate-${index}`}
-                      className="bg-white border border-black/8 rounded-2xl p-6 flex items-center justify-center hover:shadow-md hover:border-accent/30 transition-all duration-300 group flex-shrink-0"
+                      className="bg-white border border-black/8 rounded-2xl p-6 flex items-center justify-center flex-shrink-0"
                       style={{ width: "180px", height: "120px" }}
                     >
                       <img
                         src={systemLogos[system] || `/logos/${system.toLowerCase().replace(/\s+/g, '-')}.png`}
                         alt={`${system} logo`}
-                        className="max-h-12 max-w-[140px] object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-60 group-hover:opacity-100"
+                        className="max-h-12 max-w-[140px] object-contain"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
                           target.style.display = 'none';

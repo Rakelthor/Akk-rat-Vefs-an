@@ -70,8 +70,14 @@ export function Contact() {
       if (response.ok) {
         // Track Google Ads conversion AFTER successful submission
         if (window.gtag) {
+          // Original account conversion
           window.gtag('event', 'conversion', {
             'send_to': 'AW-18029982289/q0YKCPumu4wcENHkrpVD'
+          });
+          
+          // New account conversion - Submit lead form
+          window.gtag('event', 'conversion', {
+            'send_to': 'AW-18036202934/347MCKnPzJkcELa7qphD'
           });
         }
         

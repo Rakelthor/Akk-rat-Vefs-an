@@ -14,6 +14,7 @@ const translations = {
     nav: {
       services: "Þjónusta",
       pricing: "Verð",
+      payroll: "Laun",
       about: "Um okkur",
       contact: "Samband",
       bookCall: "Bóka samtal",
@@ -57,7 +58,7 @@ const translations = {
       items: [
         {
           title: "Innleiðing",
-          desc: "Innleiðing á rafrænum lausnum er innifalin. Verðið er fast og fyrirsjáanlegt.",
+          desc: "Til þess að vinna bókhaldið með skilvirkum hætti nýtum við okkur rafrænar lausnir. Við gerum þér fast og fyrirsjáanlegt tilboð í upphafi og innleiðing rafrænna lausna er innifalin í því verði.",
         },
         {
           title: "Rafrænt Bókhald",
@@ -65,7 +66,7 @@ const translations = {
         },
         {
           title: "Launavinnsla",
-          desc: "Við reiknum launin í Payday og sjáum um að skila öllum skilagreinum til banka, lífeyrissjóða og stéttarfélaga.",
+          desc: "Við reiknum launin í Payday og sjáum um að skila öllum skilagreinum til banka, lífeyrissjóða og stéttarfélaga. Við bjóðum einnig upp á launa skýrslur sem sýna launaþróun og hvaða þættir vega þyngst.",
         },
         {
           title: "Ársreikningar",
@@ -83,16 +84,16 @@ const translations = {
     },
     // Systems
     systems: {
-      title: "B2B tengingar",
+      title: "Engar krumpaðar <span class='text-accent'>kvittanir</span>",
       description: "Við setjum upp B2B þjónustu við viðskiptabankann þinn og færslurnar rata beint í bókhaldið. Allar kvittanir fara sömuleiðis með banka færslunum. Ef slík uppsetning er ekki möguleg má setja upp tengingu við Xero sem getur haldið utan um allar kvittar og reikninga.",
-      items: ["Arion Banki", "Íslandsbanki", "Landsbanki", "Payday", "Xero", "Shopify", "WooCommerce"],
+      items: ["Arion Banki", "Íslandsbanki", "Landsbanki", "Payday", "Xero", "Shopify", "WooCommerce", "Business Central", "DK", "Regla"],
     },
     // Comparison
     comparison: {
       tagline: "AF HVERJU GLÖGGVA",
       title: "Skiptu yfir í Glöggva fyrir betri yfirsýn og áreiðanlegri þjónustu",
-      heading: "Af hverju að <span class='text-accent'>færa sig yfir</span> til okkar?",
-      description: "Færðu þig yfir til okkar með auðveldum hætti. Við sjáum um að koma bókhaldinu í 100% rafrænt form hjá Payday og bætum yfirsýnina þína strax á fyrsta mánuðinum. Með því að velja bókhaldskerfi Payday má spara kostnað sem fylgir dýrari bókhaldskerfum.",
+      heading: "Af hverju að færa sig <span class='text-accent'>yfir</span> til okkar?",
+      description: "Færðu þig yfir til okkar með auðveldum hætti. Við sjáum um að koma bókhaldinu í 100% rafrænt form og bætum yfirsýnina þína strax á fyrsta mánuðinum. Við aðstoðum við val á bókhaldskerfi og yfirfærslu sé þess þörf. Rétta bókhaldskerfið getur bætt yfirsýnina verulega ásamt því að draga úr kostnaði. Í sameiningu stillum við upp skýrslum sem draga fram þau atriði sem skipta sköpum.",
       gloggva: "Glöggva",
       traditional: "Hefðbundið Bókhald",
       features: {
@@ -119,18 +120,23 @@ const translations = {
       steps: [
         {
           number: "1",
-          title: "Yfirfærsla gagna",
-          description: "Við sjáum alfarið um að færa allar bókhalds upplýsingar yfir í Payday kerfið. Við sjáum um samskipti við fyrri samstarfsaðila með þínum samþykki.",
+          title: "Hafðu samband",
+          description: "Við gerum þér fast tilboð í bókhaldið eftir umfangi þess. Við bjóðum sanngjarnt og fyrirsjáanlegt verð.",
         },
         {
           number: "2",
           title: "Upphafsfundur",
-          description: "Þú færð upphafsfund með þínum tengilið hjá okkur og við förum vel yfir allar forsendur. Saman stillum við upp yfirlitsskýrslu sem auðveldar þér alla ákvarðanatöku.",
+          description: "Þú færð upphafsfund með þínum tengilið hjá okkur og við stillum saman strengi. Ef við náum saman sjáum við alfarið um að vera í sambandi við fyrri bókara og taka við verkinu.",
         },
         {
           number: "3",
+          title: "Yfirfærsla gagna",
+          description: "Ef þörf er á að færa bókhaldið í nýtt kerfi þá hefst samstarfið á því. Einnig getur þurft að innleiða vissar rafrænar lausnir til þess að auðvelda framhaldið.",
+        },
+        {
+          number: "4",
           title: "Hefjumst handa",
-          description: "Við hefjumst strax handa og þú heldur þínum rekstri áfram óhindrað.",
+          description: "Við tökum við bókhaldinu og stillum upp með þér yfirlitsskýrslu sem auðveldar þér alla ákvarðanatöku. Við aðstoðum þig einnig við að nýta þér þær skýrslur sem eru innbyggðar í þitt bókhaldskerfi. Góð yfirsýn er lykilatriði í farsælum rekstri.",
         },
       ],
     },
@@ -170,6 +176,11 @@ const translations = {
           desc: "Hvort sem þú ert með einn starfsmann eða fimmtíu, þá aðlögum við þjónustuna.",
         },
       ],
+    },
+    // Payroll Insights
+    payrollInsights: {
+      title: "<span class='text-accent'>Yfirsýn</span> yfir launakostnað",
+      description: "Í flestum fyrirtækjum er launakostnaður mikilvægasti rekstrarliðurinn. Við bjóðum upp á ítarlega mánaðarlega skýrslu sem sýnir þér hvaða þættir eru að hafa áhrif á launaþróunina. Hvers vegna eru launin að hækka einmitt núna? Eru það sem dæmi kjarasamningarnir, veikindi eða hátíðisdagar sem eru að hafa áhrif þennan mánuðinn? Hvert stefnir í þeim næsta? Við aðstoðum þig við að fá tilfinningu fyrir því sem skiptir máli.",
     },
     // Pricing
     pricing: {
@@ -236,7 +247,7 @@ const translations = {
       tagline: "UM OKKUR",
       title: "Um <span class='text-accent'>okkur</span>",
       description:
-        "Miklar framfarir hafa átt sér stað undanfarin ár í skráningu bókhalds. Með því að nýta sér rafræna skráningu er orðið auðveldara að ná yfirsýn yfir reksturinn eins og hann stendur í dag í stað þess að horfa sífellt í baksýnisspegilinn. Bókhaldsfyrirtækið Glöggva var stofnað af Rakel Þórhallsdóttur sem hefur M.Acc. próf í bókhaldi og endurskoðun ásamt því að hafa áratuga reynslu í rekstri fyrirtækja og fjármálastjórnun. Góð yfirsýn er afar mikilvæg fyrir trausta ákvarðanatöku. Við fylgjum þér alla leið.",
+        "Miklar framfarir hafa átt sér stað undanfarin ár í skráningu bókhalds. Með því að nýta sér rafræna skráningu er orðið auðveldara að ná yfirsýn yfir reksturinn eins og hann stendur í dag í stað þess að horfa sífellt í baksýnisspegilinn. Bókhaldsfyrirtækið Glöggva var stofnað af Rakel Þórhallsdóttur sem lauk meistaragráðu í reikningshaldi og endurskoðun M.Acc. árið 2010 frá Háskóla Íslands. Hún starfaði hjá Deloitte í fimm ári ásamt því að stofna og reka þrjú fyrirtæki í veitingarekstri og smásölu. Eftir að hafa reynt það á eigin skinni hversu mikilvægt það er að hafa alltaf góða yfirsýn yfir reksturinn er ánægjulegt að geta aðstoðað viðskiptavini Glöggva með að ná sinni yfirsýn.",
     },
     // Contact
     contact: {
@@ -283,6 +294,7 @@ const translations = {
     nav: {
       services: "Services",
       pricing: "Pricing",
+      payroll: "Payroll",
       about: "About",
       contact: "Contact",
       bookCall: "Book a Call",
@@ -324,7 +336,7 @@ const translations = {
       items: [
         {
           title: "Digital Journey",
-          desc: "We help you implement all the solutions that simplify accounting and improve your oversight. Implementation is included and pricing is fixed and predictable.",
+          desc: "In order to work with accounting efficiently, we use digital solutions. We give you a fixed and predictable quote at the start and implementation of digital solutions is included in that price.",
         },
         {
           title: "Electronic Accounting",
@@ -332,7 +344,7 @@ const translations = {
         },
         {
           title: "Payroll Processing",
-          desc: "We calculate wages in Payday or DK and handle all filing statements to banks, pension funds, and unions.",
+          desc: "We calculate wages in Payday and handle all filing statements to banks, pension funds, and unions. We also offer payroll reports that show wage development and which factors weigh most.",
         },
         {
           title: "Annual Reports",
@@ -350,16 +362,16 @@ const translations = {
     },
     // Systems
     systems: {
-      title: "Electronic accounting in collaboration with:",
+      title: "No Crumpled <span class='text-accent'>Receipts</span>",
       description: "We set up B2B services with your business bank and transactions flow directly into your accounting. All receipts accompany bank transactions. If such a setup is not possible, we can set up an integration with Xero, which can manage all receipts and invoices.",
-      items: ["Arion Banki", "Íslandsbanki", "Landsbanki", "Payday", "Xero", "Shopify", "WooCommerce"],
+      items: ["Arion Banki", "Íslandsbanki", "Landsbanki", "Payday", "Xero", "Shopify", "WooCommerce", "Business Central", "DK", "Regla"],
     },
     // Comparison
     comparison: {
       tagline: "WHY GLÖGGVA",
       title: "Switch to Glöggva for better oversight and convenient service",
       heading: "Why <span class='text-accent'>switch</span> to us?",
-      description: "Switch to us with ease. We handle converting your accounting to 100% electronic format in Payday and improve your oversight from the very first month.",
+      description: "Switch to us with ease. We handle converting your accounting to 100% electronic format and improve your oversight from the very first month. We assist with selecting the right accounting system and transferring data if needed. The right accounting system can significantly improve your oversight while reducing costs. Together, we set up reports that highlight the crucial factors for your business.",
       gloggva: "Glöggva",
       traditional: "Traditional Accounting Office",
       features: {
@@ -386,18 +398,23 @@ const translations = {
       steps: [
         {
           number: "1",
-          title: "Tell us who you're currently working with",
-          description: "We'll contact your previous accountant to request professional clearance. We'll collect all of your financial data and undertake a thorough review to ensure you're compliant.",
+          title: "Get in Touch",
+          description: "We provide you with a fixed quote for accounting based on its scope. We offer fair and predictable pricing.",
         },
         {
           number: "2",
-          title: "Meet your new Accountant",
-          description: "We'll get you set up correctly on your preferred accounting software and introduce you to your new dedicated accountant. We'll handle all communication with tax authorities about the change.",
+          title: "Initial Meeting",
+          description: "You'll have an initial meeting with your contact person and we'll align on everything. If we reach an agreement, we'll handle all communication with your previous accountant and take over the work.",
         },
         {
           number: "3",
-          title: "Back to business",
-          description: "That's it, we'll begin work right away so you can get back to what you do best.",
+          title: "Data Transfer",
+          description: "If there's a need to transfer your accounting to a new system, the partnership begins with that. We may also need to implement certain digital solutions to facilitate the process going forward.",
+        },
+        {
+          number: "4",
+          title: "Getting Started",
+          description: "We take over your accounting and set up an overview report with you that facilitates all decision-making. We also help you utilize the reports built into your accounting system. Good oversight is key to successful operations.",
         },
       ],
     },
@@ -437,6 +454,11 @@ const translations = {
           desc: "Whether you have one employee or fifty, we adapt our service to your needs.",
         },
       ],
+    },
+    // Payroll Insights
+    payrollInsights: {
+      title: "Payroll Cost <span class='text-accent'>Overview</span>",
+      description: "In most companies, payroll is the most important operating expense. We offer detailed monthly reports that show you which factors are affecting wage development. Why are wages increasing right now? Is it collective agreements, sick leave, or holidays affecting this month? What's the trend for the next month? We help you gain insights into what matters.",
     },
     // Pricing
     pricing: {
@@ -503,7 +525,7 @@ const translations = {
       tagline: "ABOUT US",
       title: "Glöggva ehf.",
       description:
-        "Glöggva ehf. was founded by Rakel Þórhallsdóttir who holds an M.Acc. degree in accounting and auditing with decades of experience in business operations and financial management. Good oversight is crucial for sound decision-making. Our goal is to provide you with the best possible information about your current situation. We support you every step of the way.",
+        "Significant advances have been made in recent years in accounting practices. By utilizing electronic recording, it has become easier to gain oversight of operations as they stand today instead of constantly looking in the rearview mirror. Glöggva accounting firm was founded by Rakel Þórhallsdóttir who completed her master's degree in accounting and auditing M.Acc. in 2010 from the University of Iceland. She worked at Deloitte for five years in addition to founding and operating three companies in catering and retail. After experiencing firsthand how important it is to always have good oversight of operations, it is satisfying to be able to help Glöggva's clients achieve their own clarity.",
     },
     // Contact
     contact: {
