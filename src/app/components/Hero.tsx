@@ -16,10 +16,13 @@ export function Hero() {
     "Arion Banki": "/logos/partners/banks/arionbanki.jpg",
     "Íslandsbanki": "/logos/partners/banks/islandsbanki.png",
     "Landsbanki": "/logos/partners/banks/landsbankinn.png",
-    "Payday": "/logos/partners/integrations/payday.png",
-    "Xero": "/logos/partners/accounting/xero.jpeg",
+    "Payday": "/logos/partners/accounting/payday.png",
+    "Xero": "/logos/partners/integrations/xero.jpeg",
     "Shopify": "/logos/partners/integrations/shopify.png",
     "WooCommerce": "/logos/partners/integrations/woocommerce.png",
+    "Business Central": "/logos/partners/accounting/business-central.png",
+    "DK": "/logos/partners/accounting/dk-logo.svg",
+    "Regla": "/logos/partners/accounting/regla.png",
   };
 
   return (
@@ -276,9 +279,24 @@ export function Hero() {
                       className="bg-white border border-black/8 rounded-2xl p-6 flex items-center justify-center flex-shrink-0"
                       style={{ width: "180px", height: "120px" }}
                     >
-                      <span className="text-muted-foreground" style={{ fontSize: "0.875rem", fontWeight: 600 }}>
-                        {system}
-                      </span>
+                      <img
+                        src={systemLogos[system] || `/logos/${system.toLowerCase().replace(/\s+/g, '-')}.png`}
+                        alt={`${system} logo`}
+                        className="max-h-12 max-w-[140px] object-contain"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const parent = target.closest('div');
+                          if (parent && !parent.querySelector('.logo-fallback')) {
+                            const fallback = document.createElement('span');
+                            fallback.className = 'logo-fallback text-muted-foreground';
+                            fallback.style.fontSize = '0.875rem';
+                            fallback.style.fontWeight = '500';
+                            fallback.textContent = system;
+                            parent.appendChild(fallback);
+                          }
+                        }}
+                      />
                     </div>
                   ))}
                   {/* Duplicate set for seamless loop */}

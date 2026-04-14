@@ -247,7 +247,7 @@ const translations = {
       tagline: "UM OKKUR",
       title: "Um <span class='text-accent'>okkur</span>",
       description:
-        "Miklar framfarir hafa átt sér stað undanfarin ár í skráningu bókhalds. Með því að nýta sér rafræna skráningu er orðið auðveldara að ná yfirsýn yfir reksturinn eins og hann stendur í dag í stað þess að horfa sífellt í baksýnisspegilinn. Bókhaldsfyrirtækið Glöggva var stofnað af Rakel Þórhallsdóttur sem lauk meistaragráðu í reikningshaldi og endurskoðun M.Acc. árið 2010 frá Háskóla Íslands. Hún starfaði hjá Deloitte í fimm ári ásamt því að stofna og reka þrjú fyrirtæki í veitingarekstri og smásölu. Eftir að hafa reynt það á eigin skinni hversu mikilvægt það er að hafa alltaf góða yfirsýn yfir reksturinn er ánægjulegt að geta aðstoðað viðskiptavini Glöggva með að ná sinni yfirsýn.",
+        "Miklar framfarir hafa átt sér stað undanfarin ár í skráningu bókhalds. Með því að nýta sér rafræna skráningu er orðið auðveldara að ná yfirsýn yfir reksturinn eins og hann stendur í dag í stað þess að horfa sífellt í baksýnisspegilinn. Bókhaldsfyrirtækið Glöggva var stofnað af Rakel Þórhallsdóttur sem lauk meistaragráðu í reikningshaldi og endurskoðun M.Acc. árið 2011 frá Háskóla Íslands. Hún starfaði hjá Deloitte á Íslandi í fimm ár og hefur stofnað og rekið þrjú fyrirtæki í veitingarekstri og smásölu. Eftir að hafa reynt það á eigin skinni hversu mikilvægt það er að hafa alltaf góða yfirsýn yfir reksturinn er ánægjulegt að geta aðstoðað viðskiptavini Glöggva með að ná sinni yfirsýn.",
     },
     // Contact
     contact: {
@@ -525,7 +525,7 @@ const translations = {
       tagline: "ABOUT US",
       title: "Glöggva ehf.",
       description:
-        "Significant advances have been made in recent years in accounting practices. By utilizing electronic recording, it has become easier to gain oversight of operations as they stand today instead of constantly looking in the rearview mirror. Glöggva accounting firm was founded by Rakel Þórhallsdóttir who completed her master's degree in accounting and auditing M.Acc. in 2010 from the University of Iceland. She worked at Deloitte for five years in addition to founding and operating three companies in catering and retail. After experiencing firsthand how important it is to always have good oversight of operations, it is satisfying to be able to help Glöggva's clients achieve their own clarity.",
+        "Significant advances have been made in recent years in accounting practices. By utilizing electronic recording, it has become easier to gain oversight of operations as they stand today instead of constantly looking in the rearview mirror. Glöggva accounting firm was founded by Rakel Þórhallsdóttir who completed her master's degree in accounting and auditing M.Acc. in 2011 from the University of Iceland. She worked at Deloitte in Iceland for five years and has founded and operated three companies in catering and retail. After experiencing firsthand how important it is to always have good oversight of operations, it is satisfying to be able to help Glöggva's clients achieve their own clarity.",
     },
     // Contact
     contact: {
