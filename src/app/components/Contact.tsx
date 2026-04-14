@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Send } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
+import { trackFormSubmission, trackEmailClick, trackPhoneCall } from "../utils/analytics";
 
 // Declare gtag function for TypeScript
 declare global {
@@ -68,18 +69,12 @@ export function Contact() {
       });
 
       if (response.ok) {
-        // Track Google Ads conversion AFTER successful submission
-        if (window.gtag) {
-          // Original account conversion
-          window.gtag('event', 'conversion', {
-            'send_to': 'AW-18029982289/q0YKCPumu4wcENHkrpVD'
-          });
-          
-          // New account conversion - Submit lead form
-          window.gtag('event', 'conversion', {
-            'send_to': 'AW-18036202934/347MCKnPzJkcELa7qphD'
-          });
-        }
+        // Track Google Ads conversion with UTM parameters using our analytics utility
+        trackFormSubmission('contact', {
+          value: 50000, // 50,000 ISK estimated value
+          currency: 'ISK',
+          transaction_id: `form_${Date.now()}`,
+        });
         
         setSubmitted(true);
         setFormData({ name: "", email: "", message: "" });
@@ -114,11 +109,19 @@ export function Contact() {
             <div className="space-y-5" style={{ fontSize: "0.9375rem" }}>
               <div>
                 <p className="text-white/30 mb-1" style={{ fontSize: "0.75rem" }}>{t.contact.emailLabel}</p>
-                <a href={`mailto:${t.contact.email}`} className="hover:text-[#34d399] transition-colors">{t.contact.email}</a>
+                <a 
+                  href={`mailto:${t.contact.email}`} 
+                  className="hover:text-[#34d399] transition-colors"
+                  onClick={() => trackEmailClick(t.contact.email)}
+                >{t.contact.email}</a>
               </div>
               <div>
                 <p className="text-white/30 mb-1" style={{ fontSize: "0.75rem" }}>{t.contact.phoneLabel}</p>
-                <a href={`tel:+354${t.contact.phone.replace(/\s/g, '')}`} className="hover:text-[#34d399] transition-colors">{t.contact.phone}</a>
+                <a 
+                  href={`tel:+354${t.contact.phone.replace(/\s/g, '')}`} 
+                  className="hover:text-[#34d399] transition-colors"
+                  onClick={() => trackPhoneCall(t.contact.phone)}
+                >{t.contact.phone}</a>
               </div>
               <div>
                 <p className="text-white/30 mb-1" style={{ fontSize: "0.75rem" }}>{t.contact.locationLabel}</p>

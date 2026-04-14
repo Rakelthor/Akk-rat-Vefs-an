@@ -1,6 +1,7 @@
 import { useLanguage } from "../context/LanguageContext";
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { trackEmailClick, trackPhoneCall } from "../utils/analytics";
 
 export function Footer() {
   const { t, language } = useLanguage();
@@ -161,7 +162,11 @@ export function Footer() {
                       <li><strong className="text-white">Réttur til að afturkalla samþykki:</strong> Þú getur afturkallað samþykki hvenær sem er</li>
                     </ul>
                     <p className="mt-4">
-                      Til að nýta réttindi þín, vinsamlegast hafðu samband við okkur á <a href="mailto:gloggva@gloggva.is" className="text-[#34d399] hover:underline">gloggva@gloggva.is</a>
+                      Til að nýta réttindi þín, vinsamlegast hafðu samband við okkur á <a 
+                        href="mailto:gloggva@gloggva.is" 
+                        className="text-[#34d399] hover:underline"
+                        onClick={() => trackEmailClick('gloggva@gloggva.is')}
+                      >gloggva@gloggva.is</a>
                     </p>
                   </section>
 
@@ -217,8 +222,16 @@ export function Footer() {
                     </p>
                     <p className="mt-4">
                       <strong className="text-white">Glöggva ehf.</strong><br />
-                      Netfang: <a href="mailto:gloggva@gloggva.is" className="text-[#34d399] hover:underline">gloggva@gloggva.is</a><br />
-                      Sími: <a href="tel:+3547725040" className="text-[#34d399] hover:underline">+354 772 5040</a>
+                      Netfang: <a 
+                        href="mailto:gloggva@gloggva.is" 
+                        className="text-[#34d399] hover:underline"
+                        onClick={() => trackEmailClick('gloggva@gloggva.is')}
+                      >gloggva@gloggva.is</a><br />
+                      Sími: <a 
+                        href="tel:+3547725040" 
+                        className="text-[#34d399] hover:underline"
+                        onClick={() => trackPhoneCall('+354 772 5040')}
+                      >+354 772 5040</a>
                     </p>
                   </section>
                 </div>
@@ -365,7 +378,11 @@ export function Footer() {
                       <li><strong className="text-white">Right to Withdraw Consent:</strong> You can withdraw consent at any time</li>
                     </ul>
                     <p className="mt-4">
-                      To exercise your rights, please contact us at <a href="mailto:gloggva@gloggva.is" className="text-[#34d399] hover:underline">gloggva@gloggva.is</a>
+                      To exercise your rights, please contact us at <a 
+                        href="mailto:gloggva@gloggva.is" 
+                        className="text-[#34d399] hover:underline"
+                        onClick={() => trackEmailClick('gloggva@gloggva.is')}
+                      >gloggva@gloggva.is</a>
                     </p>
                   </section>
 
@@ -421,8 +438,16 @@ export function Footer() {
                     </p>
                     <p className="mt-4">
                       <strong className="text-white">Glöggva ehf.</strong><br />
-                      Email: <a href="mailto:gloggva@gloggva.is" className="text-[#34d399] hover:underline">gloggva@gloggva.is</a><br />
-                      Phone: <a href="tel:+3547725040" className="text-[#34d399] hover:underline">+354 772 5040</a>
+                      Email: <a 
+                        href="mailto:gloggva@gloggva.is" 
+                        className="text-[#34d399] hover:underline"
+                        onClick={() => trackEmailClick('gloggva@gloggva.is')}
+                      >gloggva@gloggva.is</a><br />
+                      Phone: <a 
+                        href="tel:+3547725040" 
+                        className="text-[#34d399] hover:underline"
+                        onClick={() => trackPhoneCall('+354 772 5040')}
+                      >+354 772 5040</a>
                     </p>
                   </section>
                 </div>
