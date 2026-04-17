@@ -273,6 +273,8 @@ const translations = {
     // Footer
     footer: {
       copyright: "Glöggva ehf.",
+      description: "Bókhaldsþjónusta á Íslandi",
+      tagline: "Fagleg bókhaldsstofa í Reykjavík með áherslu á rafrænt bókhald, launavinnslu og persónulega þjónustu",
       services: "Services",
       pricing: "Pricing",
       about: "About",
@@ -551,6 +553,8 @@ const translations = {
     // Footer
     footer: {
       copyright: "Glöggva ehf.",
+      description: "Accounting Services in Iceland",
+      tagline: "Professional accounting firm in Reykjavík focused on digital accounting, payroll, and personalized service",
       services: "Services",
       pricing: "Pricing",
       about: "About",

@@ -459,7 +459,18 @@ export function Footer() {
 
       {/* Footer Links */}
       <div className="py-10">
-        <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="max-w-5xl mx-auto px-6">
+          {/* Company Description */}
+          <div className="text-center mb-8">
+            <h3 className="text-white mb-2" style={{ fontSize: "1.125rem", fontWeight: 600 }}>
+              {t.footer.copyright} - {t.footer.description}
+            </h3>
+            <p className="text-white/50 max-w-2xl mx-auto" style={{ fontSize: "0.875rem", lineHeight: 1.6 }}>
+              {t.footer.tagline}
+            </p>
+          </div>
+
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
             <span className="text-white/40" style={{ fontSize: "0.8125rem" }}>
               &copy; {new Date().getFullYear()} {t.footer.copyright}
@@ -484,6 +495,7 @@ export function Footer() {
               <span>{t.footer.privacy}</span>
               {isExpanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
             </button>
+          </div>
           </div>
         </div>
       </div>
