@@ -8,9 +8,22 @@ export function About() {
   return (
     <section id="um-okkur" className="py-28 bg-white">
       <div className="max-w-5xl mx-auto px-6">
+        {/* SEO-optimized H2 heading with keyword */}
+        <div className="text-center mb-12">
+          <h2
+            className="text-primary mb-4"
+            style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.2 }}
+          >
+            Glöggva ehf. - <span className="text-accent">Bókhaldsþjónusta</span> á Íslandi
+          </h2>
+          <p className="text-muted-foreground max-w-3xl mx-auto" style={{ fontSize: "1.0625rem", lineHeight: 1.85 }}>
+            Fagleg bókhaldsstofa í Reykjavík með áherslu á rafrænt bókhald, launavinnslu og persónulega þjónustu
+          </p>
+        </div>
+
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2
+            <h3
               className="text-primary mb-8"
               style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.2 }}
               dangerouslySetInnerHTML={{ __html: t.about.title }}
@@ -24,7 +37,7 @@ export function About() {
               <div className="relative w-full max-w-[320px]">
                 <img 
                   src="/images/rakel-profile.jpg"
-                  alt="Rakel Þórhallsdóttir - Founder of Glöggva ehf." 
+                  alt="Rakel Þórhallsdóttir - Bókari og eigandi Glöggva ehf. bókhaldsþjónusta" 
                   className="w-full h-auto rounded-2xl shadow-lg"
                   onError={() => setImageError(true)}
                 />

@@ -4,8 +4,20 @@
   publish = "dist"
   command = "npm run build"
 
+# Prerender for search engine crawlers
+[[plugins]]
+  package = "@netlify/plugin-sitemap"
+
 # SPA redirect - all routes serve index.html
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Headers for SEO optimization
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

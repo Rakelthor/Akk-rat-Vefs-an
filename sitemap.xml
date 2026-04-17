@@ -3,34 +3,42 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://gloggva.is/</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="is" href="https://gloggva.is/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://gloggva.is/" />
   </url>
   <url>
-    <loc>https://gloggva.is/#thjonusta</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://gloggva.is/thjonusta</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="is" href="https://gloggva.is/thjonusta" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gloggva.is/thjonusta" />
   </url>
   <url>
-    <loc>https://gloggva.is/#verd</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://gloggva.is/laun</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="is" href="https://gloggva.is/laun" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gloggva.is/laun" />
   </url>
   <url>
-    <loc>https://gloggva.is/#um-okkur</loc>
-    <lastmod>2026-04-08</lastmod>
+    <loc>https://gloggva.is/um-okkur</loc>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="is" href="https://gloggva.is/um-okkur" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gloggva.is/um-okkur" />
   </url>
   <url>
-    <loc>https://gloggva.is/#samband</loc>
-    <lastmod>2026-04-08</lastmod>
+    <loc>https://gloggva.is/samband</loc>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="is" href="https://gloggva.is/samband" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gloggva.is/samband" />
   </url>
 </urlset>

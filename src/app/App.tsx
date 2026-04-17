@@ -13,6 +13,18 @@ export default function App() {
   useEffect(() => {
     // Initialize analytics tracking (UTM parameters, scroll depth, time on page)
     initializeAnalytics();
+
+    // Handle path-based navigation (e.g., /laun -> #laun)
+    const path = window.location.pathname.replace(/^\//, ''); // Remove leading slash
+    if (path && path !== '') {
+      // Wait for DOM to be ready, then scroll to section
+      setTimeout(() => {
+        const element = document.getElementById(path);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
   }, []);
 
   return (
