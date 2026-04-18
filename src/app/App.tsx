@@ -15,16 +15,32 @@ export default function App() {
     initializeAnalytics();
 
     // Handle path-based navigation (e.g., /laun -> #laun)
-    const path = window.location.pathname.replace(/^\//, ''); // Remove leading slash
-    if (path && path !== '') {
-      // Wait for DOM to be ready, then scroll to section
-      setTimeout(() => {
-        const element = document.getElementById(path);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-    }
+    const handlePathNavigation = () => {
+      const pathname = window.location.pathname;
+      const path = pathname.startsWith('/') ? pathname.slice(1) : pathname;
+      
+      if (path && path !== '') {
+        // Wait for DOM to be fully ready
+        const scrollToSection = () => {
+          const element = document.getElementById(path);
+          if (element) {
+            // Update URL to show hash without page reload
+            window.history.replaceState(null, '', `/#${path}`);
+            // Scroll to the section
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        };
+
+        // Try immediately
+        scrollToSection();
+        
+        // Fallback: try again after a short delay to ensure DOM is ready
+        setTimeout(scrollToSection, 100);
+        setTimeout(scrollToSection, 300);
+      }
+    };
+
+    handlePathNavigation();
   }, []);
 
   return (
