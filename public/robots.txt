@@ -1,18 +1,15 @@
-# robots.txt for https://gloggva.is/
+# robots.txt for gloggva.is
 
 User-agent: *
-
-# Block akkúrat.is domain from being indexed
-# (Only index gloggva.is)
-Host: gloggva.is
-
 Allow: /
 
 # Sitemaps
+Sitemap: https://www.gloggva.is/sitemap.xml
 Sitemap: https://gloggva.is/sitemap.xml
 
 # Disallow admin or private areas (if any in future)
 # Disallow: /admin/
+# Disallow: /private/
 
-# Crawl-delay for good practice (optional)
-Crawl-delay: 0.5
+# Crawl-delay (optional, helps prevent server overload)
+Crawl-delay: 1
