@@ -11,10 +11,20 @@ import { initializeAnalytics } from "./utils/analytics";
 
 export default function App() {
   useEffect(() => {
-    // Disable automatic scroll restoration
+    // CRITICAL: Disable automatic scroll restoration IMMEDIATELY
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';
     }
+
+    // Prevent any scroll until we're ready
+    let scrollLocked = false;
+    const preventScroll = (e: Event) => {
+      if (scrollLocked) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    };
 
     // Initialize analytics tracking (UTM parameters, scroll depth, time on page)
     initializeAnalytics();
@@ -38,6 +48,10 @@ export default function App() {
       });
       
       if (targetId && targetId !== '') {
+        // Lock scroll temporarily
+        scrollLocked = true;
+        window.addEventListener('scroll', preventScroll, { passive: false, capture: true });
+
         // Function to scroll to section
         const scrollToSection = () => {
           const element = document.getElementById(targetId);
@@ -49,29 +63,33 @@ export default function App() {
               window.history.replaceState(null, '', `/#${targetId}`);
             }
             
-            // Use requestAnimationFrame to ensure scroll happens after browser's scroll restoration
-            requestAnimationFrame(() => {
-              requestAnimationFrame(() => {
-                // Scroll to the section with offset for navbar
-                const navbarHeight = 80;
-                const elementPosition = element.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
-                
-                console.log('Scrolling to:', targetId, 'Position:', offsetPosition);
-                
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: 'smooth'
-                });
-              });
+            // Calculate position
+            const navbarHeight = 80;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+            
+            console.log('Scrolling to:', targetId, 'Position:', offsetPosition);
+            
+            // Force instant scroll (can't be interrupted)
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'instant'
             });
+
+            // Keep scroll locked for a bit longer to prevent browser from resetting
+            setTimeout(() => {
+              scrollLocked = false;
+              window.removeEventListener('scroll', preventScroll, { capture: true });
+              console.log('Scroll lock released');
+            }, 500);
+
             return true;
           }
           return false;
         };
 
         // Try multiple times with increasing delays to ensure DOM is ready
-        const maxAttempts = 10;
+        const maxAttempts = 15;
         let attempts = 0;
         
         const tryScroll = () => {
@@ -87,11 +105,13 @@ export default function App() {
             setTimeout(tryScroll, 100 * attempts); // Increasing delay
           } else {
             console.log('Failed to find section after', maxAttempts, 'attempts');
+            scrollLocked = false;
+            window.removeEventListener('scroll', preventScroll, { capture: true });
           }
         };
 
         // Start trying after a small delay to let React render
-        setTimeout(tryScroll, 100);
+        setTimeout(tryScroll, 150);
       }
     };
 
@@ -103,6 +123,7 @@ export default function App() {
 
     return () => {
       window.removeEventListener('hashchange', handleNavigation);
+      window.removeEventListener('scroll', preventScroll, { capture: true });
       // Restore default scroll restoration when component unmounts
       if ('scrollRestoration' in window.history) {
         window.history.scrollRestoration = 'auto';
