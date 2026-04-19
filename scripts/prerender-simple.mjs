@@ -24,6 +24,12 @@ console.log('📝 Creating Netlify configuration files...\n');
 const redirectsContent = `# Redirect www to non-www for gloggva.is
 https://www.gloggva.is/* https://gloggva.is/:splat 301!
 
+# Redirect path-based routes to hash-based for smooth scrolling
+/laun https://gloggva.is/#laun 301!
+/thjonusta https://gloggva.is/#thjonusta 301!
+/um-okkur https://gloggva.is/#um-okkur 301!
+/samband https://gloggva.is/#samband 301!
+
 # SPA fallback (must be last)
 /* /index.html 200
 `;
