@@ -22,31 +22,43 @@ export function CookieConsent() {
     
     if (consent) {
       // Apply the stored consent preference
-      if (typeof window.gtag === "function") {
-        if (consent === "accepted") {
-          window.gtag("consent", "update", {
-            ad_storage: "granted",
-            ad_user_data: "granted",
-            ad_personalization: "granted",
-            analytics_storage: "granted",
-          });
+      // Use a small delay to ensure gtag is loaded
+      const applyConsent = () => {
+        if (typeof window.gtag === "function") {
+          if (consent === "accepted") {
+            window.gtag("consent", "update", {
+              ad_storage: "granted",
+              ad_user_data: "granted",
+              ad_personalization: "granted",
+              analytics_storage: "granted",
+            });
+            console.log("✅ Consent applied: GRANTED");
+          } else {
+            window.gtag("consent", "update", {
+              ad_storage: "denied",
+              ad_user_data: "denied",
+              ad_personalization: "denied",
+              analytics_storage: "denied",
+            });
+            console.log("❌ Consent applied: DENIED");
+          }
         } else {
-          window.gtag("consent", "update", {
-            ad_storage: "denied",
-            ad_user_data: "denied",
-            ad_personalization: "denied",
-            analytics_storage: "denied",
-          });
+          // Retry if gtag not loaded yet
+          console.log("⏳ gtag not ready, retrying...");
+          setTimeout(applyConsent, 100);
         }
-      }
+      };
+      
+      applyConsent();
     } else {
-      // Small delay to not interfere with page load
-      const timer = setTimeout(() => setShowBanner(true), 1000);
-      return () => clearTimeout(timer);
+      // Show banner immediately for new users (no delay needed)
+      setShowBanner(true);
     }
   }, []);
 
   const handleAccept = () => {
+    console.log("🍪 User accepted cookies");
+    
     // Update Google Consent Mode to grant all
     if (typeof window.gtag === "function") {
       window.gtag("consent", "update", {
@@ -55,12 +67,18 @@ export function CookieConsent() {
         ad_personalization: "granted",
         analytics_storage: "granted",
       });
+      console.log("✅ Google Consent updated: GRANTED");
+    } else {
+      console.warn("⚠️ gtag function not available");
     }
+    
     localStorage.setItem("cookie-consent", "accepted");
     setShowBanner(false);
   };
 
   const handleDecline = () => {
+    console.log("🍪 User declined cookies");
+    
     // Update Google Consent Mode to deny all
     if (typeof window.gtag === "function") {
       window.gtag("consent", "update", {
@@ -69,7 +87,11 @@ export function CookieConsent() {
         ad_personalization: "denied",
         analytics_storage: "denied",
       });
+      console.log("❌ Google Consent updated: DENIED");
+    } else {
+      console.warn("⚠️ gtag function not available");
     }
+    
     localStorage.setItem("cookie-consent", "declined");
     setShowBanner(false);
   };
