@@ -6,16 +6,11 @@
   # Node version
   NODE_VERSION = "18"
 
-# Redirect www to non-www (must come BEFORE SPA fallback)
-[[redirects]]
-  from = "https://www.gloggva.is/*"
-  to = "https://gloggva.is/:splat"
-  status = 301
-  force = true
-
-# SPA fallback (catch-all for client-side routing)
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  force = false
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"

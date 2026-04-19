@@ -15,6 +15,53 @@ if (!fs.existsSync(distDir)) {
   process.exit(1);
 }
 
+// First, create proper _redirects and _headers files in dist/
+// This fixes the Netlify build warnings about directories
+
+console.log('📝 Creating Netlify configuration files...\n');
+
+// Create _redirects file (replaces the directory version)
+const redirectsContent = `# Redirect www to non-www for gloggva.is
+https://www.gloggva.is/* https://gloggva.is/:splat 301!
+
+# SPA fallback (must be last)
+/* /index.html 200
+`;
+
+const redirectsPath = path.join(distDir, '_redirects');
+// Remove directory if it exists
+if (fs.existsSync(redirectsPath) && fs.lstatSync(redirectsPath).isDirectory()) {
+  console.log('🗑️  Removing _redirects directory...');
+  fs.rmSync(redirectsPath, { recursive: true, force: true });
+}
+fs.writeFileSync(redirectsPath, redirectsContent, 'utf-8');
+console.log('✅ Created _redirects file');
+
+// Create _headers file (replaces the directory version)
+const headersContent = `# Security and cache headers for gloggva.is
+
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+`;
+
+const headersPath = path.join(distDir, '_headers');
+// Remove directory if it exists
+if (fs.existsSync(headersPath) && fs.lstatSync(headersPath).isDirectory()) {
+  console.log('🗑️  Removing _headers directory...');
+  fs.rmSync(headersPath, { recursive: true, force: true });
+}
+fs.writeFileSync(headersPath, headersContent, 'utf-8');
+console.log('✅ Created _headers file\n');
+
 // Read the base index.html
 const indexPath = path.join(distDir, 'index.html');
 if (!fs.existsSync(indexPath)) {
