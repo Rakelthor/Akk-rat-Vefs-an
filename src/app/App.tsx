@@ -14,59 +14,86 @@ export default function App() {
     // Initialize analytics tracking (UTM parameters, scroll depth, time on page)
     initializeAnalytics();
 
-    // Handle path-based navigation (e.g., /laun -> #laun)
-    const pathname = window.location.pathname;
-    const path = pathname.startsWith('/') ? pathname.slice(1) : pathname;
-    
-    console.log('Path navigation check:', { pathname, path }); // Debug log
-    
-    if (path && path !== '') {
-      // Function to scroll to section
-      const scrollToSection = () => {
-        const element = document.getElementById(path);
-        console.log('Looking for element with ID:', path, 'Found:', !!element); // Debug log
-        if (element) {
-          // Update URL to show hash without page reload
-          window.history.replaceState(null, '', `/#${path}`);
-          // Scroll to the section with offset for navbar
-          const navbarHeight = 80; // Adjust based on your navbar height
-          const elementPosition = element.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
-          
-          console.log('Scrolling to:', path, 'Position:', offsetPosition); // Debug log
-          
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-          return true;
-        }
-        return false;
-      };
-
-      // Try multiple times with increasing delays to ensure DOM is ready
-      const maxAttempts = 10;
-      let attempts = 0;
+    // Handle both path-based navigation (e.g., /laun) and hash navigation (e.g., /#laun)
+    const handleNavigation = () => {
+      // Check if we have a hash in the URL first
+      let targetId = window.location.hash.slice(1); // Remove the '#'
       
-      const tryScroll = () => {
-        attempts++;
-        console.log('Scroll attempt:', attempts, 'of', maxAttempts); // Debug log
-        
-        if (scrollToSection()) {
-          console.log('Successfully scrolled to section!'); // Debug log
-          return; // Success, stop trying
-        }
-        
-        if (attempts < maxAttempts) {
-          setTimeout(tryScroll, 100 * attempts); // Increasing delay
-        } else {
-          console.log('Failed to find section after', maxAttempts, 'attempts'); // Debug log
-        }
-      };
+      // If no hash, check the pathname
+      if (!targetId) {
+        const pathname = window.location.pathname;
+        const path = pathname.startsWith('/') ? pathname.slice(1) : pathname;
+        targetId = path;
+      }
+      
+      console.log('Navigation check:', { 
+        pathname: window.location.pathname, 
+        hash: window.location.hash,
+        targetId 
+      });
+      
+      if (targetId && targetId !== '') {
+        // Function to scroll to section
+        const scrollToSection = () => {
+          const element = document.getElementById(targetId);
+          console.log('Looking for element with ID:', targetId, 'Found:', !!element);
+          
+          if (element) {
+            // Update URL to show hash without page reload (only if coming from path)
+            if (!window.location.hash) {
+              window.history.replaceState(null, '', `/#${targetId}`);
+            }
+            
+            // Scroll to the section with offset for navbar
+            const navbarHeight = 80;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+            
+            console.log('Scrolling to:', targetId, 'Position:', offsetPosition);
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+            return true;
+          }
+          return false;
+        };
 
-      // Start trying after a small delay to let React render
-      setTimeout(tryScroll, 50);
-    }
+        // Try multiple times with increasing delays to ensure DOM is ready
+        const maxAttempts = 10;
+        let attempts = 0;
+        
+        const tryScroll = () => {
+          attempts++;
+          console.log('Scroll attempt:', attempts, 'of', maxAttempts);
+          
+          if (scrollToSection()) {
+            console.log('Successfully scrolled to section!');
+            return; // Success, stop trying
+          }
+          
+          if (attempts < maxAttempts) {
+            setTimeout(tryScroll, 100 * attempts); // Increasing delay
+          } else {
+            console.log('Failed to find section after', maxAttempts, 'attempts');
+          }
+        };
+
+        // Start trying after a small delay to let React render
+        setTimeout(tryScroll, 50);
+      }
+    };
+
+    // Handle initial navigation
+    handleNavigation();
+
+    // Also handle hash changes (for in-page navigation)
+    window.addEventListener('hashchange', handleNavigation);
+
+    return () => {
+      window.removeEventListener('hashchange', handleNavigation);
+    };
   }, []);
 
   return (
