@@ -11,6 +11,11 @@ import { initializeAnalytics } from "./utils/analytics";
 
 export default function App() {
   useEffect(() => {
+    // Disable automatic scroll restoration
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+
     // Initialize analytics tracking (UTM parameters, scroll depth, time on page)
     initializeAnalytics();
 
@@ -44,16 +49,21 @@ export default function App() {
               window.history.replaceState(null, '', `/#${targetId}`);
             }
             
-            // Scroll to the section with offset for navbar
-            const navbarHeight = 80;
-            const elementPosition = element.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
-            
-            console.log('Scrolling to:', targetId, 'Position:', offsetPosition);
-            
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: 'smooth'
+            // Use requestAnimationFrame to ensure scroll happens after browser's scroll restoration
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                // Scroll to the section with offset for navbar
+                const navbarHeight = 80;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+                
+                console.log('Scrolling to:', targetId, 'Position:', offsetPosition);
+                
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: 'smooth'
+                });
+              });
             });
             return true;
           }
@@ -81,7 +91,7 @@ export default function App() {
         };
 
         // Start trying after a small delay to let React render
-        setTimeout(tryScroll, 50);
+        setTimeout(tryScroll, 100);
       }
     };
 
@@ -93,6 +103,10 @@ export default function App() {
 
     return () => {
       window.removeEventListener('hashchange', handleNavigation);
+      // Restore default scroll restoration when component unmounts
+      if ('scrollRestoration' in window.history) {
+        window.history.scrollRestoration = 'auto';
+      }
     };
   }, []);
 
