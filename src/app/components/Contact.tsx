@@ -8,6 +8,7 @@ declare global {
   interface Window {
     gtag?: (...args: any[]) => void;
     gtag_report_conversion?: (url?: string) => boolean;
+    dataLayer?: any[];
   }
 }
 
@@ -69,6 +70,14 @@ export function Contact() {
       });
 
       if (response.ok) {
+        // Push form submission event to GTM dataLayer
+        if (window.dataLayer) {
+          window.dataLayer.push({
+            event: 'form_submission',
+            form_name: 'contact'
+          });
+        }
+        
         // Track Google Ads conversion with UTM parameters using our analytics utility
         trackFormSubmission('contact', {
           value: 50000, // 50,000 ISK estimated value

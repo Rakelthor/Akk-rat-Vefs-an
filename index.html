@@ -250,6 +250,13 @@
     </script>
   </head>
   <body>
+    <!-- Disable scroll restoration immediately -->
+    <script>
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+    </script>
+    
     <!-- Hidden form for Netlify form detection -->
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG7L3S67"
