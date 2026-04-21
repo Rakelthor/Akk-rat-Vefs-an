@@ -81,15 +81,60 @@ export function getStoredUTMParameters(): UTMParameters {
  * Track page view with UTM parameters
  */
 export function trackPageView(path?: string): void {
-  if (typeof window === 'undefined' || !window.gtag) return;
-  
+  if (typeof window === 'undefined') return;
+
   const utm = getStoredUTMParameters();
-  
-  window.gtag('event', 'page_view', {
-    page_path: path || window.location.pathname,
-    page_location: window.location.href,
-    ...utm,
-  });
+
+  // Track to GTM dataLayer (works even if gtag not loaded yet)
+  if (window.dataLayer) {
+    window.dataLayer.push({
+      event: 'page_view',
+      page_path: path || window.location.pathname,
+      page_location: window.location.href,
+      ...utm,
+    });
+  }
+
+  // Also track to gtag if available
+  if (window.gtag) {
+    window.gtag('event', 'page_view', {
+      page_path: path || window.location.pathname,
+      page_location: window.location.href,
+      ...utm,
+    });
+  }
+}
+
+/**
+ * Track virtual pageview for SPA navigation
+ */
+export function trackVirtualPageview(pagePath: string, pageTitle?: string): void {
+  if (typeof window === 'undefined') return;
+
+  const utm = getStoredUTMParameters();
+
+  // Push virtual pageview to GTM dataLayer
+  if (window.dataLayer) {
+    window.dataLayer.push({
+      event: 'virtual_pageview',
+      page_path: pagePath,
+      page_title: pageTitle || document.title,
+      page_location: window.location.origin + pagePath,
+      ...utm,
+    });
+  }
+
+  // Also track to gtag if available
+  if (window.gtag) {
+    window.gtag('event', 'page_view', {
+      page_path: pagePath,
+      page_title: pageTitle || document.title,
+      page_location: window.location.origin + pagePath,
+      ...utm,
+    });
+  }
+
+  console.log('Virtual pageview tracked:', pagePath);
 }
 
 /**
@@ -278,11 +323,45 @@ export function getAttributionReport(): {
 }
 
 /**
+ * Wait for gtag to be available
+ */
+function waitForGtag(): Promise<void> {
+  return new Promise((resolve) => {
+    if (typeof window === 'undefined') {
+      resolve();
+      return;
+    }
+
+    // If gtag is already available, resolve immediately
+    if (window.gtag) {
+      resolve();
+      return;
+    }
+
+    // Otherwise, wait for it to load (max 5 seconds)
+    let attempts = 0;
+    const maxAttempts = 50; // 50 * 100ms = 5 seconds
+
+    const checkGtag = setInterval(() => {
+      attempts++;
+
+      if (window.gtag || attempts >= maxAttempts) {
+        clearInterval(checkGtag);
+        resolve();
+      }
+    }, 100);
+  });
+}
+
+/**
  * Initialize analytics tracking
  */
-export function initializeAnalytics(): void {
+export async function initializeAnalytics(): Promise<void> {
   if (typeof window === 'undefined') return;
-  
+
+  // Wait for gtag to be available
+  await waitForGtag();
+
   // Store UTM parameters on page load
   storeUTMParameters();
   

@@ -21,16 +21,16 @@ if (!fs.existsSync(distDir)) {
 console.log('📝 Creating Netlify configuration files...\n');
 
 // Create _redirects file (replaces the directory version)
-const redirectsContent = `# Redirect www to non-www for gloggva.is
+const redirectsContent = `# Redirect akkúrat.is to gloggva.is (if domain is connected)
+https://akkúrat.is/* https://gloggva.is/:splat 301!
+https://www.akkúrat.is/* https://gloggva.is/:splat 301!
+http://akkúrat.is/* https://gloggva.is/:splat 301!
+http://www.akkúrat.is/* https://gloggva.is/:splat 301!
+
+# Redirect www to non-www for gloggva.is
 https://www.gloggva.is/* https://gloggva.is/:splat 301!
 
-# Redirect path-based routes to hash-based for smooth scrolling
-/laun https://gloggva.is/#laun 301!
-/thjonusta https://gloggva.is/#thjonusta 301!
-/um-okkur https://gloggva.is/#um-okkur 301!
-/samband https://gloggva.is/#samband 301!
-
-# SPA fallback (must be last)
+# SPA fallback - serve pre-rendered HTML for all routes
 /* /index.html 200
 `;
 
@@ -82,6 +82,7 @@ const routes = [
   {
     path: '/',
     output: 'index.html',
+    canonical: 'https://gloggva.is/',
     title: 'Glöggva - Bókhald, Launavinnsla og Skattskil á Íslandi',
     description: 'Fagleg bókhaldsþjónusta á Íslandi. Bókhald, launavinnsla, ársreikningar, VSK skil, framtöl og skattskil fyrir íslensk fyrirtæki.',
     content: `
@@ -128,6 +129,7 @@ const routes = [
   {
     path: '/thjonusta',
     output: 'thjonusta/index.html',
+    canonical: 'https://gloggva.is/thjonusta',
     title: 'Bókhaldsþjónusta - Glöggva',
     description: 'Bókhald, launavinnsla, ársreikningar, VSK skil og fjármálaráðgjöf fyrir íslensk fyrirtæki.',
     content: `
@@ -159,6 +161,7 @@ const routes = [
   {
     path: '/laun',
     output: 'laun/index.html',
+    canonical: 'https://gloggva.is/laun',
     title: 'Launavinnsla og Launagreiningar - Glöggva',
     description: 'Launavinnsla, launaspár, kjarasamningar og launagreiningar fyrir íslensk fyrirtæki.',
     content: `
@@ -200,6 +203,7 @@ const routes = [
   {
     path: '/um-okkur',
     output: 'um-okkur/index.html',
+    canonical: 'https://gloggva.is/um-okkur',
     title: 'Um Glöggva - Bókhaldsstofa í Reykjavík',
     description: 'Glöggva ehf. er bókhaldsstofa í Reykjavík með áherslu á persónulega þjónustu og traust ráðgjöf.',
     content: `
@@ -226,6 +230,7 @@ const routes = [
   {
     path: '/samband',
     output: 'samband/index.html',
+    canonical: 'https://gloggva.is/samband',
     title: 'Hafa Samband - Glöggva Bókhald',
     description: 'Hafðu samband við Glöggva fyrir bókhaldsþjónustu. Sími: 772-5040, netfang: gloggva@gloggva.is',
     content: `
@@ -285,6 +290,23 @@ for (const route of routes) {
         '</head>',
         `  <meta name="description" content="${route.description}" />\n</head>`
       );
+    }
+
+    // Update canonical URL
+    if (route.canonical) {
+      if (html.includes('<link rel="canonical"')) {
+        // Match canonical tag with or without trailing slash in closing tag
+        html = html.replace(
+          /<link rel="canonical" href="[^"]*"\s*\/?>/i,
+          `<link rel="canonical" href="${route.canonical}" />`
+        );
+      } else {
+        // Add canonical if it doesn't exist
+        html = html.replace(
+          '</head>',
+          `  <link rel="canonical" href="${route.canonical}" />\n</head>`
+        );
+      }
     }
 
     // Inject SEO content into the root div

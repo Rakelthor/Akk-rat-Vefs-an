@@ -7,7 +7,7 @@ import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { CookieConsent } from "./components/CookieConsent";
 import { useEffect } from "react";
-import { initializeAnalytics } from "./utils/analytics";
+import { initializeAnalytics, trackVirtualPageview } from "./utils/analytics";
 
 export default function App() {
   useEffect(() => {
@@ -62,14 +62,19 @@ export default function App() {
             if (!window.location.hash) {
               window.history.replaceState(null, '', `/#${targetId}`);
             }
-            
+
+            // Track virtual pageview for GTM
+            const pagePath = `/${targetId}`;
+            const pageTitle = `Glöggva - ${targetId.charAt(0).toUpperCase() + targetId.slice(1)}`;
+            trackVirtualPageview(pagePath, pageTitle);
+
             // Calculate position
             const navbarHeight = 80;
             const elementPosition = element.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
-            
+
             console.log('Scrolling to:', targetId, 'Position:', offsetPosition);
-            
+
             // Force instant scroll (can't be interrupted)
             window.scrollTo({
               top: offsetPosition,
